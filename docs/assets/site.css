@@ -192,7 +192,10 @@ footer .brand img { width: 26px; height: 26px; }
 
 /* Home page: product cards that link to a product page */
 a.card { text-decoration: none; color: inherit; }
-.card .more { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--brand); }
+.card .more { display: block; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--brand); }
+a.engine { text-decoration: none; transition: transform .2s, box-shadow .2s; }
+a.engine:hover { transform: translateY(-2px); box-shadow: 0 20px 48px rgba(67,56,202,.38); }
+.engine .more { display: block; margin-top: 6px; font-size: 14px; font-weight: 600; opacity: .9; }
 
 /* Product pages (docs/<product>/index.html) */
 .product-name { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
@@ -222,12 +225,22 @@ a.card { text-decoration: none; color: inherit; }
 .platforms .btn { padding: 9px 18px; font-size: 15px; }
 .soon { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; color: #cbd5e1; border: 1px solid rgba(255,255,255,.2); }
 .fine { flex-basis: 100%; margin: 0; font-size: 13px; }
+/* Upcoming products: a big icon instead of a screenshot, and when it's coming */
+.hero-icon { width: 240px; height: 240px; justify-self: center; filter: drop-shadow(0 24px 48px rgba(15,23,42,.22)); }
+.when {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px;
+  padding: 5px 14px 5px 10px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  background: #fff; border: 1px solid var(--line); color: var(--muted);
+}
+.when::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: linear-gradient(135deg, var(--product), var(--product2)); }
+.card .when { margin: 8px 8px 0 0; padding: 2px 10px 2px 8px; font-size: 12px; }
 
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .family { max-width: 280px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
+  .hero-icon { width: 160px; height: 160px; justify-self: start; }
   .flow, .free .wrap { grid-template-columns: 1fr; }
   .free .wrap { gap: 32px; }
   .arrow svg { transform: rotate(90deg); }

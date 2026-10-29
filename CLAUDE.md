@@ -36,14 +36,20 @@ Every Open Logix product follows these principles. Site content should reflect t
 
 - `docs/` is the published site root. GitHub Pages is set to serve from the `docs/` folder on `main`, not the repo root. Put all site content here.
 - `docs/CNAME` holds the custom domain (`www.openlogix.org`). It must stay inside `docs/`: a `CNAME` at the repo root is ignored by this Pages setup. Git history shows earlier attempts that put it at the root before it was moved. Changing or deleting this file changes or breaks the custom domain.
-- `docs/index.html` is the org home page: plain HTML, no JavaScript. Its sections are hero, ecosystem (frontends sitting on the Engine), free/no-catch, principles, AI/MCP flow, and footer. In the ecosystem, a product with a page has its card as a link (`<a class="card">`) with a "Learn more →" line (`.more`); the others stay plain cards.
+- `docs/index.html` is the org home page: plain HTML, no JavaScript. Its sections are hero, ecosystem (frontends sitting on the Engine), free/no-catch, principles, AI/MCP flow, and footer. In the ecosystem, every product card is a link to its page (`<a class="card">`, with the product's `--product`/`--product2` set inline) showing its availability (`.when`) and "Learn more →" (`.more`); the Logix Engine block links to `engine/` the same way.
 - `docs/assets/site.css` is the one stylesheet for every page (home and product pages), so they share one look: the tokens in `:root` (ink, muted, line, soft, `--brand` indigo, `--brand2` cyan, radius), the system font stack, header, hero, buttons, cards, sections, the dark "free" block, footer, and the product page classes. Pages link it relatively (`assets/site.css`, `../assets/site.css`) and have no inline `<style>` of their own. Change the look here, not per page.
-- `docs/<product>/index.html` is a product's home page (marketing, not docs), e.g. `docs/ide/index.html` at `www.openlogix.org/ide/`. See "Product pages".
+- `docs/<product>/index.html` is a product's home page (marketing, not docs): `ide`, `engine`, `ai`, `cli`, `vscode`, `studio`, `remote`, e.g. `docs/ide/index.html` at `www.openlogix.org/ide/`. See "Product pages".
 - `docs/brand/` holds the identity as SVGs: `logo.svg` (org mark) and one icon per product (`engine`, `ide`, `cli`, `vscode`, `studio`, `remote`, `ai`). The page and favicon load them with `<img>`.
 
 ## Product pages
 
 Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` is its brand icon name (`ide`, `engine`, `cli`, ...). Docs stay in the product's own repo.
+
+- **Availability** (shown on the product pages, in the home page cards and on the Engine block; update all three when it changes):
+  - Logix IDE: previews available now, release Q4 2026.
+  - Logix Engine and Logix AI: Q4 2026.
+  - Logix CLI, Logix VSCode, Logix Studio and Logix Remote: Q1 2027.
+- **Repos:** only Logix IDE (`logix-ide`) and Logix Engine (`logix-engine`) have one so far. Pages of products without a repo link GitHub to the org (`https://github.com/openlogix`); switch to the repo when it exists.
 
 - **Path rule:** never use a repo name as a path. The custom domain also serves each repo's Pages site at `www.openlogix.org/<repo>/` (e.g. `/logix-ide/` is the Logix IDE docs), which would hide a folder of that name here.
 - **Template** (follow `docs/ide/index.html`), in this order, using only the shared classes:
@@ -55,6 +61,8 @@ Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` 
   - Screenshots (`alt`): `.gallery` of `figure`s with captions.
   - Download (`free`, dark): the FREE badge, a link to the install guide, "Free. Open. No catch." linking to `../#free`, and `.platforms` (macOS Apple Silicon, Windows x64, Linux x64; a Download button where available, "Coming soon" otherwise). Download buttons go to the repo's Releases page, not `/releases/latest`, which skips pre-releases.
   - Footer: the home page footer, plus any notice the product needs as `.fine`.
+  - Before Download: "Part of Open Logix" (`#family`), the `.apps` grid of the other products' cards, each linking to its page, with the home page's card text.
+- **Upcoming products** (no release or screenshots yet; follow `docs/engine/index.html`): the same template with these changes. The hero uses the home page's two-column layout (`hero`, not `product-hero`) with the product icon large on the right (`.hero-icon`) instead of a screenshot, and `.when` ("Coming <quarter>") above the `h1`. CTA: Availability (primary, to `#availability`) and GitHub. There's no Screenshots section. The dark section is `#availability`: "Coming <quarter>.", a sentence that it's in development (Engine, AI) or planned (the rest) and will be free, self-contained and cross-platform, and `.platforms` with the quarter on each. Nav: Features, Ecosystem, Availability, GitHub. The flow's three steps are: the input (a tile drawn like a brand icon in the product's hue, with a simple glyph: document, chat bubble, pencil or laptop), the product's own icon with chips of what it does, and the home page's FPGA board drawing. Features stay general and true to the product descriptions above; don't promise specific features, commands or integrations that haven't been decided.
 - Screenshots are loaded from the product's published docs (absolute `https://www.openlogix.org/<repo>/images/...` URLs, so they stay current and the local preview shows them). The product repo's spec lists which ones the page uses.
 - Content comes from the product (its README and docs) and must stay true to it: say what ships today (e.g. platforms "Coming soon", what it's built on).
 - **Logix IDE** (`docs/ide/`): the tagline is the product's motto, always in quotes: "The Arduino experience, for FPGAs." Because of it, the footer carries "Logix is not affiliated with or endorsed by Arduino. Arduino is a trademark of Arduino SA." It's built on Apio today and moves to Logix Engine once the Engine is ready; the page says both. Update it when the move ships. Screenshots and links point to `www.openlogix.org/logix-ide/` (docs from the `logix-ide` repo).
