@@ -49,7 +49,7 @@ Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` 
   - Logix IDE: previews available now, release Q4 2026.
   - Logix Engine and Logix AI: Q4 2026.
   - Logix CLI, Logix VSCode, Logix Studio and Logix Remote: Q1 2027.
-- **Repos:** only Logix IDE (`logix-ide`) and Logix Engine (`logix-engine`) have one so far. Pages of products without a repo link GitHub to the org (`https://github.com/openlogix`); switch to the repo when it exists.
+- **Repos:** every product has one, named `logix-<short>` (`logix-ide`, `logix-engine`, `logix-ai`, `logix-cli`, `logix-vscode`, `logix-studio`, `logix-remote`), and its GitHub "Website" field is its product page. The ones for products not started yet are public placeholders (Apache 2.0 license, topics, and a README with the description, "Coming <quarter>", and links to the product page and Open Logix). A product page's GitHub links (nav, hero button, Availability) go to its repo; the footer's goes to the org.
 
 - **Path rule:** never use a repo name as a path. The custom domain also serves each repo's Pages site at `www.openlogix.org/<repo>/` (e.g. `/logix-ide/` is the Logix IDE docs), which would hide a folder of that name here.
 - **Template** (follow `docs/ide/index.html`), in this order, using only the shared classes:
