@@ -57,7 +57,7 @@ Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` 
   - Footer: the home page footer, plus any notice the product needs as `.fine`.
 - Screenshots are loaded from the product's published docs (absolute `https://www.openlogix.org/<repo>/images/...` URLs, so they stay current and the local preview shows them). The product repo's spec lists which ones the page uses.
 - Content comes from the product (its README and docs) and must stay true to it: say what ships today (e.g. platforms "Coming soon", what it's built on).
-- **Logix IDE** (`docs/ide/`): the tagline is the product's motto, always in quotes: "The Arduino experience, for FPGAs." Because of it, the footer carries "Logix is not affiliated with or endorsed by Arduino. Arduino is a trademark of Arduino SA." It's built on Apio today, and the page says so. Screenshots and links point to `www.openlogix.org/logix-ide/` (docs from the `logix-ide` repo).
+- **Logix IDE** (`docs/ide/`): the tagline is the product's motto, always in quotes: "The Arduino experience, for FPGAs." Because of it, the footer carries "Logix is not affiliated with or endorsed by Arduino. Arduino is a trademark of Arduino SA." It's built on Apio today and moves to Logix Engine once the Engine is ready; the page says both. Update it when the move ships. Screenshots and links point to `www.openlogix.org/logix-ide/` (docs from the `logix-ide` repo).
 
 ## Brand identity
 
