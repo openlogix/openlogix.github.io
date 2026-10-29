@@ -51,11 +51,7 @@ Every Open Logix product follows these principles. Site content should reflect t
 
 ## Build / deploy
 
-There is no build step, package manager, linter, or test suite. Pushing to `main` deploys the site. To preview locally, serve `docs/` with any static file server, for example:
-
-```
-python3 -m http.server -d docs 8000
-```
+There is no build step, package manager, linter, or test suite. Pushing to `main` deploys the site. To preview locally, run `./view.sh [port]` (default port 8000). It serves `docs/` with Python's built-in HTTP server and opens the browser.
 
 ## License
 
