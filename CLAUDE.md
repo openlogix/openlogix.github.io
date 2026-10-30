@@ -10,14 +10,16 @@ The main website for the Open Logix organization, a static GitHub Pages site ser
 
 Open Logix builds easy-to-use open source tools for FPGA design. Site content should present these projects as one ecosystem:
 
-- **Logix Engine** is the core of the ecosystem. It is an MCP backend that gives frontends FPGA services: building, testing, simulation, verification, and programming. Every other project runs on top of it.
+- **Logix Engine** is the core of the ecosystem. It is an MCP backend that gives frontends FPGA services: building, testing, simulation, verification, and board programming. Every other project runs on top of it.
 - Frontends, each serving a different level of design and implementation:
   - **Logix IDE**: an Arduino-like experience for FPGAs.
   - **Logix CLI**: a command-line tool, similar to Apio.
   - **Logix VSCode**: an extension for VS Code.
   - **Logix Studio**: a graphical, schematic-based design tool.
   - **Logix Remote**: a network adapter for remote FPGA development.
-  - **Logix AI**: a set of AI agents that design, program, and test FPGAs.
+  - **Logix AI**: a set of AI agents that design and test FPGA logic and program the board.
+
+- **Wording: program boards, not FPGAs.** Most users program an FPGA board, not a bare FPGA chip, so say "program the board" or "program FPGA boards", never "program FPGAs" or "program the FPGA". This applies everywhere: site pages, product descriptions, repo descriptions, READMEs, docs and release notes.
 
 ## Org principles
 
@@ -30,7 +32,7 @@ Every Open Logix product follows these principles. Site content should reflect t
 - **Experienced team:** the team are experienced developers from the US and Europe, with more than 40 years of combined professional software development and a long track record in the open source movement. The site uses this to build trust, as the "40+ years" figure in the "No catch" section.
 - **Spec-driven:** each product is built from a detailed AI specification. This makes changes, adaptations, and new features quick and low-effort.
 - **Quality and trust:** products have extensive automated tests. All code is public, every release is built on GitHub, and builds are reproducible, so users can build it themselves. The site presents this positively ("Transparent and verifiable") to build trust. Don't use words like "malware" or "virus" on the site.
-- **AI-native engine:** Logix Engine is MCP-compatible. Off-the-shelf AI systems can use it to generate code and testbenches, then lint, build, simulate, and program the FPGA, with no other software needed.
+- **AI-native engine:** Logix Engine is MCP-compatible. Off-the-shelf AI systems can use it to generate code and testbenches, then lint, build, simulate, and program the board, with no other software needed.
 
 ## Layout
 
