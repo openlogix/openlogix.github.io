@@ -19,6 +19,8 @@ Open Logix builds easy-to-use open source tools for FPGA design. Site content sh
   - **Logix Remote**: a network adapter for remote FPGA development.
   - **Logix AI**: a set of AI agents that design and test FPGA logic and program the board.
 
+- **Each frontend owns its project model and examples.** The engine takes explicit inputs (folders, files, board) and has no project files or examples, so each frontend uses the project model and source format that fit it best (IceStudio's block diagrams have no `.v` sources, for example) and ships examples in that format. Frontends on the engine don't depend on Apio. Logix CLI may stay close to Apio's project model; that is decided later.
+
 - **Wording: program boards, not FPGAs.** Most users program an FPGA board, not a bare FPGA chip, so say "program the board" or "program FPGA boards", never "program FPGAs" or "program the FPGA". This applies everywhere: site pages, product descriptions, repo descriptions, READMEs, docs and release notes. Logix IDE's motto, "The Arduino experience, for FPGAs.", is not about programming and stays as it is.
 
 ## Org principles
