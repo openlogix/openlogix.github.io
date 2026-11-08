@@ -196,6 +196,13 @@ a.card { text-decoration: none; color: inherit; }
 a.engine { text-decoration: none; transition: transform .2s, box-shadow .2s; }
 a.engine:hover { transform: translateY(-2px); box-shadow: 0 20px 48px rgba(67,56,202,.38); }
 .engine .more { display: block; margin-top: 6px; font-size: 14px; font-weight: 600; opacity: .9; }
+/* Logix Catalog: the board data under the engine, in its own hue */
+.connector.single {
+  height: 28px;
+  background: linear-gradient(90deg, transparent calc(50% - 1px), #c7d2fe calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+}
+.engine.catalog { background: linear-gradient(120deg, #b91c1c, #ef4444 60%, #f87171); box-shadow: 0 16px 40px rgba(185,28,28,.28); }
+a.engine.catalog:hover { box-shadow: 0 20px 48px rgba(185,28,28,.36); }
 
 /* Product pages (docs/<product>/index.html) */
 .product-name { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
