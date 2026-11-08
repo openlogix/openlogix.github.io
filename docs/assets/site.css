@@ -242,65 +242,7 @@ a.engine.catalog:hover { box-shadow: 0 20px 48px rgba(185,28,28,.36); }
 .when::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: linear-gradient(135deg, var(--product), var(--product2)); }
 .card .when { margin: 8px 8px 0 0; padding: 2px 10px 2px 8px; font-size: 12px; }
 
-/* Overview deck (docs/overview/): no JavaScript, each slide is a full-screen
-   section, and the page snaps from slide to slide on big screens. */
-.deck main { counter-reset: slide; }
-.slide {
-  position: relative; display: flex; align-items: center;
-  min-height: calc(100vh - 65px); min-height: calc(100svh - 65px);
-  padding: 56px 0; border-bottom: 1px solid var(--line);
-  counter-increment: slide;
-}
-.slide.alt { border-top: 0; }
-.slide > .wrap { width: 100%; }
-.slide::after {
-  content: counter(slide) " / 13"; position: absolute; right: 24px; bottom: 16px;
-  font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .04em;
-}
-.slide.free::after { color: #94a3b8; }
-.slide h2 { max-width: 22em; }
-.hint { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
-.toc { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 48px; max-width: 760px; }
-.toc li { counter-increment: toc; break-inside: avoid; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 19px; }
-.toc li::before { content: counter(toc, decimal-leading-zero); display: inline-block; width: 2.4em; font-weight: 700; color: var(--brand); }
-.toc a { text-decoration: none; font-weight: 600; }
-.toc a:hover { color: var(--brand); }
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.split > *, .roadmap > * { min-width: 0; }
-.slide .product-name + h2 { margin-top: 0; }
-.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.points li {
-  padding: 16px 18px 16px 20px; border-radius: 14px; background: #fff;
-  border: 1px solid var(--line); border-left: 4px solid var(--product, var(--brand));
-  color: var(--muted); font-size: 16px;
-}
-.points strong { color: var(--ink); }
-.chips.light .chip { background: #f5f3ff; border-color: #ede9fe; color: #5b21b6; }
-.apps.compact .card { padding: 14px 16px; align-items: center; }
-.apps.compact .card img { width: 36px; height: 36px; }
-.apps.compact .card h3 { font-size: 16px; margin: 0; }
-.apps.compact .card p { font-size: 14px; }
-.slide .connector { height: 24px; }
-.slide .engine { padding: 18px 24px; }
-.slide .engine img { width: 48px; height: 48px; border-radius: 12px; }
-.roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px; }
-.phase > h3 { margin: 0 0 12px; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
-.phase { display: grid; gap: 10px; align-content: start; }
-.phase .card { padding: 12px 16px; align-items: center; }
-.phase .card img { width: 36px; height: 36px; }
-.phase .card h3 { font-size: 16px; margin: 0; }
-.phase .card .when { margin: 4px 0 0; }
-.principle p a { color: var(--brand); }
-@media (min-width: 901px) and (min-height: 640px) {
-  html:has(body.deck) { scroll-snap-type: y mandatory; scroll-padding-top: 65px; }
-  .slide { scroll-snap-align: start; }
-  .deck footer { scroll-snap-align: end; }
-}
-
 @media (max-width: 900px) {
-  .split, .roadmap { grid-template-columns: 1fr; gap: 32px; }
-  .toc { columns: 1; }
-  .slide { min-height: 0; }
   .hero .wrap { grid-template-columns: 1fr; }
   .family { max-width: 280px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
