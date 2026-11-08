@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Logix overview: Open source tools for FPGA design</title>
+<meta name="description" content="An overview of Open Logix in a few slides: one MCP engine, an open board catalog, and frontends for every way of working. Free and open source.">
+<meta property="og:title" content="Open Logix overview">
+<meta property="og:description" content="Open source tools for FPGA design, in a few slides.">
+<meta property="og:image" content="https://www.openlogix.org/logix-ide/images/main.png">
+<link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="deck">
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../brand/logo.svg" alt=""><span><span class="open">Open</span><span class="logix">Logix</span></span></a>
+    <nav>
+      <a href="#contents">Contents</a>
+      <a href="../">Website</a>
+      <a class="gh" href="https://github.com/openlogix">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. Title -->
+  <section class="slide hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Open Logix · Overview</p>
+        <h1>FPGA design,<br><span class="grad-text">without the friction.</span></h1>
+        <p class="lead">Open source tools for FPGA design: one engine, an open board catalog, and a tool for every way of working.</p>
+        <p class="badge"><b>FREE</b> 100% free and open source · MIT or Apache&nbsp;2.0</p>
+        <p class="hint">Scroll, or press Space, to go through the slides.</p>
+      </div>
+      <div class="family" aria-hidden="true">
+        <img src="../brand/ide.svg" alt="">
+        <img src="../brand/cli.svg" alt="">
+        <img src="../brand/vscode.svg" alt="">
+        <img src="../brand/studio.svg" alt="">
+        <img src="../brand/engine.svg" alt="" class="core">
+        <img src="../brand/remote.svg" alt="">
+        <img src="../brand/ai.svg" alt="">
+        <img src="../brand/catalog.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Contents -->
+  <section class="slide alt" id="contents">
+    <div class="wrap">
+      <p class="eyebrow">Contents</p>
+      <h2>What's in this overview</h2>
+      <ol class="toc">
+        <li><a href="#why">Why Open Logix</a></li>
+        <li><a href="#ecosystem">One engine, many ways to work</a></li>
+        <li><a href="#engine">Logix Engine</a></li>
+        <li><a href="#catalog">Logix Catalog</a></li>
+        <li><a href="#frontends">The frontends</a></li>
+        <li><a href="#ide">Logix IDE, the reference frontend</a></li>
+        <li><a href="#ai">AI-native</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#free">Free. Open. No catch.</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#involved">Get involved</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. Why -->
+  <section class="slide" id="why">
+    <div class="wrap">
+      <p class="eyebrow">Why Open Logix</p>
+      <h2>Programming an FPGA board should be as easy as an Arduino.</h2>
+      <p class="sub">Getting started with FPGA boards often means finding, installing and wiring up a toolchain yourself, and learning a different tool for each step. Open Logix takes that work away.</p>
+      <div class="principles">
+        <div class="principle"><h3>One step to install</h3><p>Every tool bundles everything it needs. No separate toolchain.</p></div>
+        <div class="principle"><h3>Your way of working</h3><p>An IDE, the command line, VS Code, schematics, remote boards, or an AI agent.</p></div>
+        <div class="principle"><h3>Boards just work</h3><p>Pick your board from the catalog. Pins, clocks and programming are already described.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Ecosystem -->
+  <section class="slide alt" id="ecosystem">
+    <div class="wrap">
+      <p class="eyebrow">The ecosystem</p>
+      <h2>One engine. Many ways to work.</h2>
+      <p class="sub">Every frontend runs on Logix Engine, and the engine knows every board in Logix Catalog.</p>
+      <div class="apps compact">
+        <a class="card" href="../ide/"><img src="../brand/ide.svg" alt=""><div><h3>Logix IDE</h3><p>The Arduino experience for FPGAs.</p></div></a>
+        <a class="card" href="../cli/"><img src="../brand/cli.svg" alt=""><div><h3>Logix CLI</h3><p>Command-line builds.</p></div></a>
+        <a class="card" href="../vscode/"><img src="../brand/vscode.svg" alt=""><div><h3>Logix VSCode</h3><p>Inside VS Code.</p></div></a>
+        <a class="card" href="../studio/"><img src="../brand/studio.svg" alt=""><div><h3>Logix Studio</h3><p>Design with schematics.</p></div></a>
+        <a class="card" href="../remote/"><img src="../brand/remote.svg" alt=""><div><h3>Logix Remote</h3><p>Boards anywhere on the network.</p></div></a>
+        <a class="card" href="../ai/"><img src="../brand/ai.svg" alt=""><div><h3>Logix AI</h3><p>Agents that design and test.</p></div></a>
+      </div>
+      <div class="connector" aria-hidden="true"></div>
+      <a class="engine" href="../engine/">
+        <img src="../brand/engine.svg" alt="">
+        <div class="text"><h3>Logix Engine</h3><p>The MCP backend every Logix tool runs on.</p></div>
+        <div class="chips"><span class="chip">Build</span><span class="chip">Test</span><span class="chip">Simulate</span><span class="chip">Verify</span><span class="chip">Program</span></div>
+      </a>
+      <div class="connector single" aria-hidden="true"></div>
+      <a class="engine catalog" href="../catalog/">
+        <img src="../brand/catalog.svg" alt="">
+        <div class="text"><h3>Logix Catalog</h3><p>Every FPGA board, described once.</p></div>
+        <div class="chips"><span class="chip">FPGA</span><span class="chip">Programming</span><span class="chip">Pins</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. Engine -->
+  <section class="slide" id="engine" style="--product: #8b5cf6; --product2: #4338ca">
+    <div class="wrap split">
+      <div>
+        <p class="product-name"><img src="../brand/engine.svg" alt="">Logix Engine</p>
+        <h2>The core of the ecosystem.</h2>
+        <p class="sub">An MCP backend that gives every frontend its FPGA services, with the whole open source toolchain bundled inside.</p>
+        <div class="chips light"><span class="chip">Lint</span><span class="chip">Build</span><span class="chip">Test</span><span class="chip">Simulate</span><span class="chip">Verify</span><span class="chip">Program the board</span></div>
+      </div>
+      <ul class="points">
+        <li><strong>Explicit and stateless.</strong> Requests name their inputs: folders, files and the board. No project files of its own.</li>
+        <li><strong>Frontends own their model.</strong> Each frontend keeps the project format and examples that fit it, from Verilog folders to block diagrams.</li>
+        <li><strong>Engine first.</strong> Logic every frontend needs, such as boards, devices, Upload and build reports, lives in the engine, so no one rewrites it.</li>
+        <li><strong>MCP-compatible.</strong> Logix frontends and off-the-shelf AI systems talk to it the same way.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Catalog -->
+  <section class="slide alt" id="catalog" style="--product: #f87171; --product2: #b91c1c">
+    <div class="wrap split">
+      <div>
+        <p class="product-name"><img src="../brand/catalog.svg" alt="">Logix Catalog</p>
+        <h2>Every FPGA board,<br><span class="grad-text">described once.</span></h2>
+        <p class="sub">An open catalog of FPGA boards: which FPGA each one has, how to program it, and what its pins are wired to.</p>
+      </div>
+      <ul class="points">
+        <li><strong>One JSON file per board.</strong> Clocks, LEDs, buttons and headers, checked against a published schema.</li>
+        <li><strong>Built into the engine.</strong> Logix Engine ships a pinned catalog release, so every Logix tool knows the same boards.</li>
+        <li><strong>Free for any project.</strong> Other tools can use the data without the engine.</li>
+        <li><strong>Open to contributions.</strong> Add or fix a board in the <code>logix-catalog</code> repo, and every tool gets it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Frontends -->
+  <section class="slide" id="frontends">
+    <div class="wrap">
+      <p class="eyebrow">The frontends</p>
+      <h2>A tool for every level of design.</h2>
+      <p class="sub">Each frontend serves a different way of working. They share the engine, so a board that works in one works in all.</p>
+      <div class="apps">
+        <a class="card" href="../ide/"><img src="../brand/ide.svg" alt=""><div><h3>Logix IDE</h3><p>The Arduino experience for FPGAs. Write, click, run.</p></div></a>
+        <a class="card" href="../cli/"><img src="../brand/cli.svg" alt=""><div><h3>Logix CLI</h3><p>Fast command-line builds, in the spirit of Apio.</p></div></a>
+        <a class="card" href="../vscode/"><img src="../brand/vscode.svg" alt=""><div><h3>Logix VSCode</h3><p>Full FPGA workflow inside the editor you already use.</p></div></a>
+        <a class="card" href="../studio/"><img src="../brand/studio.svg" alt=""><div><h3>Logix Studio</h3><p>Design visually by drawing schematics.</p></div></a>
+        <a class="card" href="../remote/"><img src="../brand/remote.svg" alt=""><div><h3>Logix Remote</h3><p>A network adapter for developing on boards anywhere.</p></div></a>
+        <a class="card" href="../ai/"><img src="../brand/ai.svg" alt=""><div><h3>Logix AI</h3><p>Agents that design and test FPGA logic and program the board for you.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. IDE -->
+  <section class="slide alt" id="ide" style="--product: #10b981; --product2: #0f766e">
+    <div class="wrap split">
+      <div>
+        <p class="product-name"><img src="../brand/ide.svg" alt="">Logix IDE</p>
+        <h2>"The Arduino experience, <span class="grad-text">for FPGAs."</span></h2>
+        <p class="sub">Previews are available now. It's also the reference frontend: its spec, docs and code show anyone how to build on the engine.</p>
+        <ul class="points">
+          <li><strong>Runs on Logix Engine,</strong> using only what the engine's tool API documents.</li>
+          <li><strong>Open to explore.</strong> Written so people and AI agents building their own frontends can follow it.</li>
+        </ul>
+      </div>
+      <img class="shot" src="https://www.openlogix.org/logix-ide/images/main.png" width="1100" height="640" alt="The Logix IDE window: a Verilog design in the editor, and the build results below" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 9. AI -->
+  <section class="slide" id="ai">
+    <div class="wrap">
+      <p class="eyebrow">AI-native</p>
+      <h2>Your AI already speaks Logix.</h2>
+      <p class="sub">Logix Engine is MCP-compatible. Connect an off-the-shelf AI assistant and it can take a design from idea to running hardware.</p>
+      <div class="flow">
+        <div class="step">
+          <img src="../brand/ai.svg" alt="">
+          <h3>Your AI assistant</h3>
+          <p>Writes the design and the testbench.</p>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="step">
+          <img src="../brand/engine.svg" alt="">
+          <h3>Logix Engine</h3>
+          <p style="margin-bottom:12px">Runs the work over MCP.</p>
+          <div class="chips"><span class="chip">Lint</span><span class="chip">Build</span><span class="chip">Simulate</span><span class="chip">Program</span></div>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="step">
+          <svg class="board" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="4" y="10" width="56" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="3"/>
+            <rect x="22" y="22" width="20" height="20" rx="3" fill="#0f766e"/>
+            <path d="M27 18v4M32 18v4M37 18v4M27 42v4M32 42v4M37 42v4M18 27h4M18 32h4M18 37h4M42 27h4M42 32h4M42 37h4" stroke="#0f766e" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="18" r="3" fill="#22c55e"/>
+          </svg>
+          <h3>Your FPGA board</h3>
+          <p>Programmed and running.</p>
+        </div>
+      </div>
+      <p class="note"><strong>No extra software.</strong> Just your AI and the Logix Engine.</p>
+    </div>
+  </section>
+
+  <!-- 10. Principles -->
+  <section class="slide alt" id="principles">
+    <div class="wrap">
+      <p class="eyebrow">Principles</p>
+      <h2>Built on a few simple promises.</h2>
+      <p class="sub">Every Open Logix product follows the same rules.</p>
+      <div class="principles">
+        <div class="principle"><h3>Easy from minute one</h3><p>Intuitive to learn, quick to install, pleasant to use.</p></div>
+        <div class="principle"><h3>Self-contained</h3><p>Everything is bundled. No separate toolchain to install.</p></div>
+        <div class="principle"><h3>Runs where you do</h3><p>macOS on Apple Silicon, Windows x64, and Linux x64.</p></div>
+        <div class="principle"><h3>Free and open</h3><p>MIT or Apache 2.0 licensed. Use and adapt it freely, as long as you don't call it Logix.</p></div>
+        <div class="principle"><h3>Spec-driven</h3><p>Built from detailed AI specifications, so changes and new features come quickly.</p></div>
+        <div class="principle"><h3>Tested and verifiable</h3><p>Extensive automated tests. Every release is built on GitHub, and builds are reproducible.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Free -->
+  <section class="slide free" id="free">
+    <div class="wrap">
+      <div>
+        <h2>Free. Open. No catch.</h2>
+        <p class="sub">Open Logix is built by members of the FPGA community, for the community. The team are experienced developers from the US and Europe, with a long track record in the open source movement.</p>
+        <div class="stats">
+          <div class="price"><span class="big">$0</span><span class="small">for everyone,<br>for any purpose.</span></div>
+          <div class="price"><span class="big">40+</span><span class="small">years of combined professional<br>software development.</span></div>
+        </div>
+      </div>
+      <div>
+        <ul class="checks">
+          <li><div><strong>100% open source</strong><span>All the code is public on GitHub. No paid editions, no locked features.</span></div></li>
+          <li><div><strong>Transparent and verifiable</strong><span>Every release is built from the public code on GitHub. Builds are reproducible, so you can build it yourself.</span></div></li>
+          <li><div><strong>Change it and share it</strong><span>MIT or Apache 2.0, whichever you prefer. Just give your own version your own name.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Roadmap -->
+  <section class="slide" id="roadmap">
+    <div class="wrap">
+      <p class="eyebrow">Roadmap</p>
+      <h2>Where things stand.</h2>
+      <div class="roadmap">
+        <div class="phase">
+          <h3>Now</h3>
+          <a class="card" href="../ide/" style="--product: #10b981; --product2: #0f766e"><img src="../brand/ide.svg" alt=""><div><h3>Logix IDE</h3><span class="when">Previews available</span></div></a>
+        </div>
+        <div class="phase">
+          <h3>Q4 2026</h3>
+          <a class="card" href="../ide/" style="--product: #10b981; --product2: #0f766e"><img src="../brand/ide.svg" alt=""><div><h3>Logix IDE</h3><span class="when">Release</span></div></a>
+          <a class="card" href="../engine/" style="--product: #8b5cf6; --product2: #4338ca"><img src="../brand/engine.svg" alt=""><div><h3>Logix Engine</h3><span class="when">In development</span></div></a>
+          <a class="card" href="../catalog/" style="--product: #f87171; --product2: #b91c1c"><img src="../brand/catalog.svg" alt=""><div><h3>Logix Catalog</h3><span class="when">In design</span></div></a>
+          <a class="card" href="../ai/" style="--product: #ec4899; --product2: #7c3aed"><img src="../brand/ai.svg" alt=""><div><h3>Logix AI</h3><span class="when">In development</span></div></a>
+        </div>
+        <div class="phase">
+          <h3>Q1 2027</h3>
+          <a class="card" href="../cli/" style="--product: #64748b; --product2: #1e293b"><img src="../brand/cli.svg" alt=""><div><h3>Logix CLI</h3><span class="when">Planned</span></div></a>
+          <a class="card" href="../vscode/" style="--product: #3b82f6; --product2: #1d4ed8"><img src="../brand/vscode.svg" alt=""><div><h3>Logix VSCode</h3><span class="when">Planned</span></div></a>
+          <a class="card" href="../studio/" style="--product: #f59e0b; --product2: #ea580c"><img src="../brand/studio.svg" alt=""><div><h3>Logix Studio</h3><span class="when">Planned</span></div></a>
+          <a class="card" href="../remote/" style="--product: #22d3ee; --product2: #0369a1"><img src="../brand/remote.svg" alt=""><div><h3>Logix Remote</h3><span class="when">Planned</span></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Get involved -->
+  <section class="slide alt" id="involved">
+    <div class="wrap">
+      <p class="eyebrow">Get involved</p>
+      <h2>Built in the open. <span class="grad-text">Join in.</span></h2>
+      <p class="sub">Everything happens on GitHub, under MIT or Apache 2.0.</p>
+      <div class="principles">
+        <div class="principle"><h3>Try Logix IDE</h3><p>Download a preview and tell us what you think. <a href="../ide/">openlogix.org/ide</a></p></div>
+        <div class="principle"><h3>Add your board</h3><p>Describe a board once in <a href="https://github.com/openlogix/logix-catalog">logix-catalog</a>, and every Logix tool can use it.</p></div>
+        <div class="principle"><h3>Build a frontend</h3><p>Use <a href="https://github.com/openlogix/logix-engine">Logix Engine</a> from your own tool, following <a href="https://github.com/openlogix/logix-ide">Logix IDE</a> as the example.</p></div>
+      </div>
+      <div class="cta" style="margin-top:40px">
+        <a class="btn btn-primary" href="https://github.com/openlogix">Open Logix on GitHub</a>
+        <a class="btn btn-ghost" href="../">www.openlogix.org</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../brand/logo.svg" alt=""><span><span class="open">Open</span><span class="logix">Logix</span></span></a>
+    <span>Free, open source FPGA tools, by the community, for the community · MIT or Apache 2.0 · <a href="https://github.com/openlogix">GitHub</a></span>
+    <p class="fine">Logix is not affiliated with or endorsed by Arduino. Arduino is a trademark of Arduino SA.</p>
+  </div>
+</footer>
+
+</body>
+</html>
