@@ -107,6 +107,7 @@ main { padding-top: var(--bar); }
 .diagram .box img, .diagram .box svg { width: calc(var(--u) * 5.2); height: calc(var(--u) * 5.2); margin-bottom: calc(var(--u) * .6); }
 .diagram b { font-size: calc(var(--u) * 1.5); line-height: 1.2; }
 .diagram small { font-size: calc(var(--u) * 1.1); color: var(--muted); }
+.diagram .box small { margin-top: calc(var(--u) * .45); line-height: 1.3; }
 .diagram .third { border: 2px dashed #94a3b8; background: #f8fafc; }
 .diagram .plus {
   display: grid; place-items: center; width: calc(var(--u) * 5.2); height: calc(var(--u) * 5.2); margin-bottom: calc(var(--u) * .6);
