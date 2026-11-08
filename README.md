@@ -6,4 +6,4 @@ The site is static HTML in [`docs/`](docs/), published with GitHub Pages: the ho
 
 To preview locally, run `./view.sh`. It serves the site at http://localhost:8000 and opens your browser.
 
-Licensed under [Apache 2.0](LICENSE).
+Licensed under [MIT](LICENSE-MIT) or [Apache 2.0](LICENSE-APACHE), at your option.
