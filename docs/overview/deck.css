@@ -88,7 +88,15 @@ main { padding-top: var(--bar); }
 .diagram { display: flex; flex-direction: column; }
 .diagram .row { display: grid; gap: calc(var(--u) * 1.4); }
 .diagram .fronts { grid-template-columns: repeat(5, 1fr); }
-.diagram .core { grid-template-columns: 1fr auto 1.6fr auto 1fr; align-items: stretch; }
+/* Bottom row: catalog → engine → board, with the open API as a cap on the engine only */
+.diagram .core { grid-template-columns: 1fr auto 1.6fr auto 1fr; grid-template-rows: auto auto; row-gap: 0; align-items: stretch; }
+.diagram .core > :nth-child(1) { grid-area: 2 / 1; }
+.diagram .core > :nth-child(2) { grid-area: 2 / 2; }
+.diagram .core > :nth-child(3) { grid-area: 2 / 3; }
+.diagram .core > :nth-child(4) { grid-area: 2 / 4; }
+.diagram .core > :nth-child(5) { grid-area: 2 / 5; }
+.diagram .core > .api { grid-area: 1 / 3; border: 2px solid #c4b5fd; border-bottom: 0; border-radius: calc(var(--u) * 1) calc(var(--u) * 1) 0 0; }
+.diagram .core > .engine { border-radius: 0 0 calc(var(--u) * 1) calc(var(--u) * 1); }
 .diagram .box {
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
   padding: calc(var(--u) * 1) calc(var(--u) * .8); border-radius: calc(var(--u) * 1);
