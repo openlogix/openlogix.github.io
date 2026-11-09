@@ -90,6 +90,7 @@ main { padding-top: var(--bar); }
 .slide.title h1 { font-size: calc(var(--u) * 7.5); }
 .slide.title h1 .open { font-weight: 400; color: var(--muted); }
 .slide.title p { font-size: calc(var(--u) * 2.4); }
+.slide.title .date { margin-top: calc(var(--u) * 3); font-size: calc(var(--u) * 1.6); font-weight: 600; letter-spacing: .04em; color: var(--brand); }
 
 /* Block diagram: rows of boxes joined by short links */
 .diagram { display: flex; flex-direction: column; }
