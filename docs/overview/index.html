@@ -8,7 +8,7 @@
 <meta property="og:title" content="Open Logix overview">
 <meta property="og:description" content="An overview of the Open Logix project, in slides.">
 <link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="deck.css?v=23">
+<link rel="stylesheet" href="deck.css?v=24">
 </head>
 <body>
 
@@ -363,6 +363,40 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
   </div>
 
 </main>
+
+
+<script>
+// Share: a small button on each slide copies the slide's own address (#id).
+// The deck works without it; this is the page's only script.
+(function () {
+  var icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
+  document.querySelectorAll('.frame[id]').forEach(function (frame) {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'share';
+    button.title = 'Copy a link to this slide';
+    button.setAttribute('aria-label', 'Copy a link to this slide');
+    button.innerHTML = icon;
+    button.addEventListener('click', function () {
+      var url = location.origin + location.pathname + '#' + frame.id;
+      history.replaceState(null, '', '#' + frame.id);
+      var shown = function (message) {
+        button.dataset.message = message;
+        button.classList.add('done');
+        setTimeout(function () { button.classList.remove('done'); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(
+          function () { shown('Link copied'); },
+          function () { shown('Copy the address bar'); });
+      } else {
+        shown('Copy the address bar');
+      }
+    });
+    frame.querySelector('.slide').appendChild(button);
+  });
+})();
+</script>
 
 </body>
 </html>

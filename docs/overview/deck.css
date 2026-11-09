@@ -117,6 +117,26 @@ main { padding-top: var(--bar); }
 .slide .res span { color: var(--muted); }
 .slide .res code { font-size: calc(var(--u) * 1.25); color: var(--brand); background: none; padding: 0; }
 
+/* Share button, added to each slide by the page's script */
+.slide .share {
+  position: absolute; top: calc(var(--u) * 1.8); right: calc(var(--u) * 2); z-index: 2;
+  width: calc(var(--u) * 3); height: calc(var(--u) * 3); padding: calc(var(--u) * .65);
+  display: grid; place-items: center; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: rgba(255,255,255,.8); color: #94a3b8;
+  transition: color .15s, border-color .15s;
+}
+.slide .share svg { width: 100%; height: 100%; }
+.slide .share:hover, .slide .share:focus-visible { color: var(--brand); border-color: #c7d2fe; }
+.slide .share::after {
+  content: attr(data-message); position: absolute; top: 50%; right: calc(100% + var(--u) * .8); transform: translateY(-50%);
+  white-space: nowrap; padding: calc(var(--u) * .35) calc(var(--u) * .8); border-radius: calc(var(--u) * .5);
+  background: var(--ink); color: #fff; font: 600 calc(var(--u) * 1.05) / 1.3 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.slide .share.done { color: #10b981; border-color: #a7f3d0; }
+.slide .share.done::after { opacity: 1; }
+@media (max-width: 700px) { .slide .share { width: 30px; height: 30px; padding: 6px; top: 10px; right: 10px; } .slide .share::after { font-size: 12px; } }
+
 /* Title slide: light, with a soft wash of the brand colors */
 .slide.title {
   background:
