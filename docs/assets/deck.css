@@ -173,6 +173,17 @@ main { padding-top: var(--bar); }
 .slide .becomes { text-align: center; color: #94a3b8; font-size: calc(var(--u) * 1.1); padding: calc(var(--u) * .45) 0; }
 .slide .becomes::before { content: "↓ "; }
 
+/* Family model slide: families → toolchain → what it runs, one row per toolchain */
+.slide .familymap { display: grid; grid-template-columns: 1.5fr auto 1fr 1.6fr; align-items: center; gap: calc(var(--u) * 1.2) calc(var(--u) * 1.6); margin-top: calc(var(--u) * 1.5); }
+.slide .familymap .head { font-size: calc(var(--u) * 1.1); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
+.slide .familymap .fams { display: flex; flex-wrap: wrap; gap: calc(var(--u) * .6); }
+.slide .familymap .fam { padding: calc(var(--u) * .5) calc(var(--u) * 1.1); border-radius: 999px; border: 1px solid #fecaca; background: #fef2f2; font-size: calc(var(--u) * 1.45); font-weight: 600; }
+.slide .familymap .to { color: #a5b4fc; font-size: calc(var(--u) * 2.2); font-weight: 700; }
+.slide .familymap .tc { padding: calc(var(--u) * .6) calc(var(--u) * 1.2); border-radius: calc(var(--u) * .8); border: 2px solid #c4b5fd; background: #f5f3ff; text-align: center; }
+.slide .familymap .tc code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: calc(var(--u) * 1.45); font-weight: 700; color: #5b21b6; background: none; padding: 0; }
+.slide .familymap + .also { margin-top: calc(var(--u) * 2.8); }
+.slide .familymap .tools { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: calc(var(--u) * 1.15); color: var(--muted); }
+
 /* Title slide: light, with a soft wash of the brand colors */
 .slide.title {
   background:

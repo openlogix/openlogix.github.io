@@ -8,7 +8,7 @@
 <meta property="og:title" content="Open Logix overview">
 <meta property="og:description" content="An overview of the Open Logix project, in slides.">
 <link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/deck.css?v=29">
+<link rel="stylesheet" href="../assets/deck.css?v=30">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
   </nav>
 </header>
 
-<main style="--slides: '15'">   <!-- the total number of slides, shown as "n / 15": update it when adding or removing a slide -->
+<main style="--slides: '16'">   <!-- the total number of slides, shown as "n / 16": update it when adding or removing a slide -->
 
   <!-- Each slide: <div class="frame" id="..."><section class="slide"><div class="body">...</div></section></div> -->
 
@@ -102,6 +102,28 @@
           <li><strong>Open data:</strong> one readable JSON file per board, usable by any tool in any language.</li>
           <li><strong>Grows with the community:</strong> a custom board becomes a contribution with one pull request.</li>
         </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="frame" id="catalog-families">
+    <section class="slide">
+      <img class="mark" src="../brand/logo.svg" alt="">
+      <div class="body">
+        <div class="heading">
+          <div>
+            <h2>Catalog family <span class="grad-text">model</span></h2>
+            <p>People see chip families. The engine maps each to a toolchain.</p>
+          </div>
+        </div>
+        <div class="familymap">
+          <div class="head">FPGA families · Logix Catalog</div><div></div><div class="head">Toolchains · Logix Engine</div><div class="head">Runs</div>
+          <div class="fams"><span class="fam">iCE40</span></div><div class="to" aria-hidden="true">→</div><div class="tc"><code>ice40</code></div><div class="tools">nextpnr-ice40 · icepack</div>
+          <div class="fams"><span class="fam">ECP5</span></div><div class="to" aria-hidden="true">→</div><div class="tc"><code>ecp5</code></div><div class="tools">nextpnr-ecp5 · ecppack</div>
+          <div class="fams"><span class="fam">GW1N</span><span class="fam">GW2A</span><span class="fam">GW5A</span></div><div class="to" aria-hidden="true">→</div><div class="tc"><code>gowin</code></div><div class="tools">nextpnr-himbaechel · gowin_pack</div>
+          <div class="fams"><span class="fam">Artix-7</span><span class="fam">Spartan-7</span><span class="fam">Zynq-7000</span></div><div class="to" aria-hidden="true">→</div><div class="tc"><code>openxc7</code></div><div class="tools">nextpnr-xilinx · openXC7 tools</div>
+        </div>
+        <p class="also">Each FPGA in the catalog names its family, and a board gets it from its FPGA. Toolchains are internal to the engine.</p>
       </div>
     </section>
   </div>
