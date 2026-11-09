@@ -258,7 +258,7 @@
           </ul>
           <div class="panel"><span class="c"># connect the engine to Claude Code, once</span>
 <span class="p">$</span> claude mcp add logix-engine -- logix-engine \
-    --engine-folder ~/.logix/engine
+    --engine-folder ~/.logix-dev/engine
 
 <span class="p">&gt;</span> <span class="you">Make the LED on my Alhambra II blink
   once a second, then program the board.</span>
@@ -297,7 +297,7 @@
 <span class="k">from</span> mcp.client.stdio <span class="k">import</span> stdio_client
 
 ENGINE = StdioServerParameters(command=<span class="s">"logix-engine"</span>,
-    args=[<span class="s">"--engine-folder"</span>, os.path.expanduser(<span class="s">"~/.logix/engine"</span>)])
+    args=[<span class="s">"--engine-folder"</span>, os.path.expanduser(<span class="s">"~/.logix-dev/engine"</span>)])
 SRC = os.path.abspath(<span class="s">"."</span>); BUILD = SRC + <span class="s">"/_build"</span>
 
 <span class="k">async def</span> main():
