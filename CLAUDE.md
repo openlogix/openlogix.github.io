@@ -97,6 +97,10 @@ Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` 
   - Current hues: Engine violet, Catalog red, IDE green, CLI slate, VSCode blue, Studio orange, Remote cyan, AI pink to purple. A new product needs a hue that isn't taken yet.
 - Glyphs: Engine = chip, Catalog = open book, IDE = window with a play button, CLI = `>_`, VSCode = `</>`, Studio = AND gate, Remote = wireless signal, AI = sparkle.
 
+## Open decisions
+
+- **How people contact the team, and which GitHub features each repo uses** (TODO, raised 2026-11-08). Decide the recommended ways to reach Open Logix (such as GitHub issues, Discussions, email, or a chat server) and which repos turn on issues, Discussions, wikis and Projects, if any; then say it on the site and in the repos' READMEs, and turn the rest off. Today (2026-11-08) every repo has issues on; Discussions are on only in `logix-ide`; wikis and Projects are on in every repo except `logix-ide` (GitHub's defaults, never decided); the site names no way to contact the team.
+
 ## Build / deploy
 
 There is no build step, package manager, linter, or test suite. If shared header/footer markup across many product pages gets hard to keep identical, GitHub Pages' built-in Jekyll (`_includes`, layouts) is the planned next step; until then the template above is the rule. Pushing to `main` deploys the site. To preview locally, run `./view.sh [port]` (default port 8000). It serves `docs/` with Python's built-in HTTP server and opens the browser.
