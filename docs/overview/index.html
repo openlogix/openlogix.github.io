@@ -346,7 +346,6 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
         <div class="heading">
           <div>
             <h2>Additional <span class="grad-text">Resources</span></h2>
-            <p>Where to go next.</p>
           </div>
         </div>
         <div class="resources">
@@ -397,7 +396,7 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
   });
 
   // Previous and next: "‹ n / m ›" in the same corner of every slide, in place
-  // of the plain number, and the left and right arrow keys.
+  // of the plain number, and the keys below.
   var frames = Array.prototype.slice.call(document.querySelectorAll('.frame[id]'));
   var arrow = function (label, target, text) {
     var link = document.createElement(target ? 'a' : 'span');
@@ -425,9 +424,15 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
     frames.forEach(function (frame, i) { if (frame.getBoundingClientRect().top <= middle) best = i; });
     return best;
   };
+  // Keys: next is → ↓ Page Down and Space; previous is ← ↑ Page Up and Shift+Space.
+  var NEXT = ['ArrowRight', 'ArrowDown', 'PageDown', ' '];
+  var PREVIOUS = ['ArrowLeft', 'ArrowUp', 'PageUp'];
   document.addEventListener('keydown', function (event) {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
-    var step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+    // Space on a focused button or link presses it instead.
+    if (event.key === ' ' && event.target.closest && event.target.closest('a, button')) return;
+    var step = event.key === ' ' && event.shiftKey ? -1
+      : NEXT.indexOf(event.key) >= 0 ? 1 : PREVIOUS.indexOf(event.key) >= 0 ? -1 : 0;
     var target = frames[current() + step];
     if (!step || !target) return;
     event.preventDefault();
