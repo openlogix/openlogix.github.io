@@ -96,7 +96,7 @@ main { padding-top: var(--bar); }
 .slide.title .date { margin-top: calc(var(--u) * 3); font-size: calc(var(--u) * 1.6); font-weight: 600; letter-spacing: .04em; color: var(--brand); }
 
 /* Block diagram: rows of boxes joined by short links */
-.diagram { display: flex; flex-direction: column; }
+.diagram { display: flex; flex-direction: column; margin-top: calc(var(--u) * 1.5); }
 .diagram .row { display: grid; gap: calc(var(--u) * 1.4); }
 .diagram .fronts { grid-template-columns: repeat(5, 1fr); }
 .diagram .fronts .box { justify-content: flex-start; }   /* icons line up even when a subtitle wraps */
@@ -125,7 +125,7 @@ main { padding-top: var(--bar); }
   display: grid; place-items: center; width: calc(var(--u) * 5.2); height: calc(var(--u) * 5.2); margin-bottom: calc(var(--u) * .6);
   border-radius: calc(var(--u) * 1.3); background: #e2e8f0; color: var(--muted); font-size: calc(var(--u) * 3.6); font-weight: 700; line-height: 1;
 }
-.diagram .link { height: calc(var(--u) * 1.6); width: 2px; margin: 0 auto; background: #a5b4fc; }
+.diagram .link { height: calc(var(--u) * 3); width: 2px; margin: 0 auto; background: #a5b4fc; }
 .diagram .band {
   display: flex; align-items: center; justify-content: center; gap: calc(var(--u) * 1);
   padding: calc(var(--u) * .9); border-radius: calc(var(--u) * 1); font-size: calc(var(--u) * 1.3); color: var(--muted);
