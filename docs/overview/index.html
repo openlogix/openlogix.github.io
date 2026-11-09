@@ -381,18 +381,17 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
       // The first slide shares the whole deck, with no slide in the address.
       var first = frame === document.querySelector('.frame[id]');
       var url = location.origin + location.pathname + (first ? '' : '#' + frame.id);
-      history.replaceState(null, '', first ? location.pathname : '#' + frame.id);
-      var shown = function (message) {
-        button.dataset.message = message;
+      var copied = function () {
+        button.dataset.message = 'Page link copied';
         button.classList.add('done');
         setTimeout(function () { button.classList.remove('done'); }, 1600);
       };
+      // Without clipboard access, show the link so it can be copied by hand.
+      var byHand = function () { window.prompt('Copy this link to the page:', url); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(
-          function () { shown('Link copied'); },
-          function () { shown('Copy the address bar'); });
+        navigator.clipboard.writeText(url).then(copied, byHand);
       } else {
-        shown('Copy the address bar');
+        byHand();
       }
     });
     frame.querySelector('.slide').appendChild(button);
