@@ -106,6 +106,17 @@ main { padding-top: var(--bar); }
 .slide .panel .k { color: #c084fc; }
 .slide .panel .s { color: #86efac; }
 
+/* Resources slide: one link per row, name, what it is, and the address */
+.slide .resources { display: grid; gap: calc(var(--u) * .7); margin-top: calc(var(--u) * 1.5); }
+.slide .res {
+  display: grid; grid-template-columns: calc(var(--u) * 16) 1fr auto; align-items: baseline; gap: calc(var(--u) * 2);
+  padding: calc(var(--u) * .75) calc(var(--u) * 1.6); border: 1px solid var(--line); border-radius: calc(var(--u) * .9);
+  text-decoration: none; color: inherit; font-size: calc(var(--u) * 1.6);
+}
+.slide .res:hover { border-color: #c7d2fe; background: #f8fafc; }
+.slide .res span { color: var(--muted); }
+.slide .res code { font-size: calc(var(--u) * 1.25); color: var(--brand); background: none; padding: 0; }
+
 /* Title slide: light, with a soft wash of the brand colors */
 .slide.title {
   background:
