@@ -118,14 +118,21 @@ main { padding-top: var(--bar); }
 .slide .res code { font-size: calc(var(--u) * 1.25); color: var(--brand); background: none; padding: 0; }
 
 /* Share button, added to each slide by the page's script */
-.slide .share {
+.slide .share, .slide .fullscreen {
   position: absolute; top: calc(var(--u) * 1.8); right: calc(var(--u) * 2); z-index: 2;
   width: calc(var(--u) * 3); height: calc(var(--u) * 3); padding: calc(var(--u) * .65);
   display: grid; place-items: center; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--line); background: rgba(255,255,255,.8); color: #94a3b8;
   transition: color .15s, border-color .15s;
 }
-.slide .share svg { width: 100%; height: 100%; }
+.slide .share svg, .slide .fullscreen svg { width: 100%; height: 100%; }
+.slide .fullscreen { right: calc(var(--u) * 5.8); }
+.slide .fullscreen:hover, .slide .fullscreen:focus-visible { color: var(--brand); border-color: #c7d2fe; }
+/* In full screen the top bar goes, and each slide fills the screen */
+:root:fullscreen { --bar: 0px; }
+:root:fullscreen .bar { display: none; }
+:root:-webkit-full-screen { --bar: 0px; }
+:root:-webkit-full-screen .bar { display: none; }
 .slide .share:hover, .slide .share:focus-visible { color: var(--brand); border-color: #c7d2fe; }
 .slide .share::after {
   content: attr(data-message); position: absolute; top: 50%; right: calc(100% + var(--u) * .8); transform: translateY(-50%);
@@ -135,7 +142,7 @@ main { padding-top: var(--bar); }
 }
 .slide .share.done { color: #10b981; border-color: #a7f3d0; }
 .slide .share.done::after { opacity: 1; }
-@media (max-width: 700px) { .slide .share { width: 30px; height: 30px; padding: 6px; top: 10px; right: 10px; } .slide .share::after { font-size: 12px; } }
+@media (max-width: 700px) { .slide .share, .slide .fullscreen { width: 30px; height: 30px; padding: 6px; top: 10px; right: 10px; } .slide .fullscreen { right: 46px; } .slide .share::after { font-size: 12px; } }
 
 /* Previous and next, added to each slide by the page's script in place of the number */
 .has-pager .slide::after { display: none; }

@@ -8,7 +8,7 @@
 <meta property="og:title" content="Open Logix overview">
 <meta property="og:description" content="An overview of the Open Logix project, in slides.">
 <link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="deck.css?v=25">
+<link rel="stylesheet" href="deck.css?v=26">
 </head>
 <body>
 
@@ -425,6 +425,41 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
     frames.forEach(function (frame, i) { if (frame.getBoundingClientRect().top <= middle) best = i; });
     return best;
   };
+  // Full screen: a button next to the share button on every slide, where the
+  // browser allows it. The same slide stays in view when it changes.
+  var root = document.documentElement;
+  var request = root.requestFullscreen || root.webkitRequestFullscreen;
+  var exit = document.exitFullscreen || document.webkitExitFullscreen;
+  var inFullScreen = function () { return document.fullscreenElement || document.webkitFullscreenElement; };
+  var enterIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var exitIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  if (request && (document.fullscreenEnabled || document.webkitFullscreenEnabled)) {
+    var keep = 0;
+    var buttons = frames.map(function (frame, i) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'fullscreen';
+      button.addEventListener('click', function () {
+        keep = i;
+        if (inFullScreen()) exit.call(document); else request.call(root);
+      });
+      frame.querySelector('.slide').appendChild(button);
+      return button;
+    });
+    var show = function () {
+      var on = !!inFullScreen();
+      buttons.forEach(function (button) {
+        button.innerHTML = on ? exitIcon : enterIcon;
+        button.title = on ? 'Exit full screen' : 'Full screen';
+        button.setAttribute('aria-label', button.title);
+      });
+    };
+    show();
+    var changed = function () { show(); frames[keep].scrollIntoView(); };
+    document.addEventListener('fullscreenchange', changed);
+    document.addEventListener('webkitfullscreenchange', changed);
+  }
+
   // Keys: next is → ↓ Page Down and Space; previous is ← ↑ Page Up, Shift+Space and Delete
   // (Backspace, the Mac's delete key, or Delete).
   var NEXT = ['ArrowRight', 'ArrowDown', 'PageDown', ' '];
