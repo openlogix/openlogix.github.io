@@ -58,7 +58,7 @@ main { padding-top: var(--bar); }
 .slide:not(.title) > .body { justify-content: flex-start; padding-top: calc(var(--u) * 6.5); }
 .slide .heading { align-items: flex-start; }
 .slide::after {
-  content: counter(slide); position: absolute; right: calc(var(--u) * 2.5); bottom: calc(var(--u) * 1.8);
+  content: counter(slide) " / " var(--slides, ""); position: absolute; right: calc(var(--u) * 2.5); bottom: calc(var(--u) * 1.8);
   font-size: calc(var(--u) * 1.2); font-weight: 600; color: #94a3b8;
 }
 .slide .mark { position: absolute; left: calc(var(--u) * 2.5); bottom: calc(var(--u) * 1.6); height: calc(var(--u) * 2); width: auto; opacity: .9; }
