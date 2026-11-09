@@ -60,7 +60,7 @@ Every Open Logix product follows these principles. Site content should reflect t
 
 Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` is its brand icon name (`ide`, `engine`, `cli`, ...). Docs stay in the product's own repo.
 
-- **Availability** (shown on the product pages, in the home page cards, and on the Engine block; update all three when it changes):
+- **Availability** (shown on the product pages, in the home page cards, on the Engine block and on the overview deck's Logix IDE slide; update them all when it changes):
   - Logix IDE: previews available now, release Q4 2026.
   - Logix Engine, Logix Catalog and Logix AI: Q4 2026.
   - Logix CLI, Logix VSCode, Logix Studio and Logix Remote: Q1 2027.
