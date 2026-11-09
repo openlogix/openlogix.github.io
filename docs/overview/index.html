@@ -8,7 +8,7 @@
 <meta property="og:title" content="Open Logix overview">
 <meta property="og:description" content="An overview of the Open Logix project, in slides.">
 <link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="deck.css?v=24">
+<link rel="stylesheet" href="deck.css?v=25">
 </head>
 <body>
 
@@ -394,6 +394,44 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
       }
     });
     frame.querySelector('.slide').appendChild(button);
+  });
+
+  // Previous and next: "‹ n / m ›" in the same corner of every slide, in place
+  // of the plain number, and the left and right arrow keys.
+  var frames = Array.prototype.slice.call(document.querySelectorAll('.frame[id]'));
+  var arrow = function (label, target, text) {
+    var link = document.createElement(target ? 'a' : 'span');
+    link.className = target ? 'step' : 'step off';
+    link.textContent = text;
+    link.setAttribute('aria-label', label);
+    if (target) { link.href = '#' + target.id; link.title = label; }
+    return link;
+  };
+  frames.forEach(function (frame, i) {
+    var nav = document.createElement('nav');
+    nav.className = 'pager';
+    nav.setAttribute('aria-label', 'Slides');
+    nav.appendChild(arrow('Previous slide', frames[i - 1], '‹'));
+    var count = document.createElement('span');
+    count.className = 'count';
+    count.textContent = (i + 1) + ' / ' + frames.length;
+    nav.appendChild(count);
+    nav.appendChild(arrow('Next slide', frames[i + 1], '›'));
+    frame.querySelector('.slide').appendChild(nav);
+  });
+  document.documentElement.classList.add('has-pager');
+  var current = function () {
+    var middle = window.innerHeight / 2, best = 0;
+    frames.forEach(function (frame, i) { if (frame.getBoundingClientRect().top <= middle) best = i; });
+    return best;
+  };
+  document.addEventListener('keydown', function (event) {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    var step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+    var target = frames[current() + step];
+    if (!step || !target) return;
+    event.preventDefault();
+    location.hash = target.id;
   });
 })();
 </script>
