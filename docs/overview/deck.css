@@ -87,6 +87,25 @@ main { padding-top: var(--bar); }
 .slide.screenshot .shotbox { flex: 1 1 auto; min-height: 0; display: flex; justify-content: center; align-items: flex-start; }
 .slide.screenshot .shot { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; border: 1px solid var(--line); border-radius: calc(var(--u) * .8); box-shadow: 0 calc(var(--u) * 1.5) calc(var(--u) * 4) rgba(15,23,42,.18); }
 
+/* Example slides: points on the left, a terminal or code panel on the right */
+.slide .example { display: grid; grid-template-columns: 1fr 1.35fr; gap: calc(var(--u) * 3.5); align-items: start; margin-top: calc(var(--u) * 1.5); }
+.slide .example ul { margin-top: 0; }
+.slide .example li { font-size: calc(var(--u) * 1.6); }
+.slide .panel {
+  margin: 0; padding: calc(var(--u) * 1.8) calc(var(--u) * 2); border-radius: calc(var(--u) * 1);
+  background: #0f172a; color: #e2e8f0; white-space: pre; overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: calc(var(--u) * 1.15); line-height: 1.55;
+  box-shadow: 0 calc(var(--u) * 1.2) calc(var(--u) * 3) rgba(15,23,42,.25);
+}
+.slide .panel.code { font-size: calc(var(--u) * .92); }
+.slide .panel .c { color: #64748b; }
+.slide .panel .p { color: #22d3ee; }
+.slide .panel .you { color: #fff; font-weight: 600; }
+.slide .panel .t { color: #a78bfa; }
+.slide .panel .ok { color: #34d399; font-weight: 600; }
+.slide .panel .k { color: #c084fc; }
+.slide .panel .s { color: #86efac; }
+
 /* Title slide: light, with a soft wash of the brand colors */
 .slide.title {
   background:
