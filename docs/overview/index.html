@@ -378,8 +378,10 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
     button.setAttribute('aria-label', 'Copy a link to this slide');
     button.innerHTML = icon;
     button.addEventListener('click', function () {
-      var url = location.origin + location.pathname + '#' + frame.id;
-      history.replaceState(null, '', '#' + frame.id);
+      // The first slide shares the whole deck, with no slide in the address.
+      var first = frame === document.querySelector('.frame[id]');
+      var url = location.origin + location.pathname + (first ? '' : '#' + frame.id);
+      history.replaceState(null, '', first ? location.pathname : '#' + frame.id);
       var shown = function (message) {
         button.dataset.message = message;
         button.classList.add('done');
