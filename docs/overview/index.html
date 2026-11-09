@@ -20,7 +20,7 @@
   </nav>
 </header>
 
-<main style="--slides: '16'">   <!-- the total number of slides, shown as "n / 16": update it when adding or removing a slide -->
+<main style="--slides: '17'">   <!-- the total number of slides, shown as "n / 17": update it when adding or removing a slide -->
 
   <!-- Each slide: <div class="frame" id="..."><section class="slide"><div class="body">...</div></section></div> -->
 
@@ -385,6 +385,29 @@ SRC = os.path.abspath(<span class="s">"."</span>); BUILD = SRC + <span class="s"
 
 asyncio.run(main())  <span class="c"># error handling left out</span></div>
         </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="frame" id="third-party">
+    <section class="slide">
+      <img class="mark" src="../brand/logo.svg" alt="">
+      <div class="body">
+        <div class="heading">
+          <div>
+            <h2>Third-party <span class="grad-text">frontends</span></h2>
+            <p>Anyone can build on Logix Engine and Logix Catalog. A few ideas:</p>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Editor extensions:</strong> JetBrains, Neovim, Emacs or Zed (Logix VSCode covers VS Code).</li>
+          <li><strong>Python and other languages:</strong> Amaranth, LiteX or MyHDL designs, built and programmed by the engine.</li>
+          <li><strong>Test automation:</strong> scripts and CI that build designs, run testbenches and program boards.</li>
+          <li><strong>Tool testing:</strong> regression suites that check the open source FPGA tools on many boards.</li>
+          <li><strong>Existing tools:</strong> projects such as IceStudio moving onto the engine instead of their own toolchain setup.</li>
+          <li><strong>Education:</strong> classroom tools, lab setups and automatic grading of student designs.</li>
+          <li><strong>Board makers:</strong> factory tests and setup tools, using the board's catalog entry.</li>
+        </ul>
       </div>
     </section>
   </div>
