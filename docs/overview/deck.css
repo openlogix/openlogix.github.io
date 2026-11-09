@@ -162,6 +162,17 @@ main { padding-top: var(--bar); }
 .slide .pager .count { min-width: calc(var(--u) * 4.5); text-align: center; }
 @media (max-width: 700px) { .slide .pager { font-size: 12px; gap: 6px; } .slide .pager .step { width: 28px; height: 28px; font-size: 20px; } .slide .pager .count { min-width: 44px; } }
 
+/* Board resources slide: resource types as small cards, and stacked panels */
+.slide .types { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--u) * .7); }
+.slide .types div { padding: calc(var(--u) * .55) calc(var(--u) * 1); border: 1px solid #fecaca; border-radius: calc(var(--u) * .8); background: #fef2f2; }
+.slide .types b { display: block; font-size: calc(var(--u) * 1.3); }
+.slide .types span { display: block; font-size: calc(var(--u) * 1.1); color: var(--muted); }
+.slide .also { margin-top: calc(var(--u) * 1.1); font-size: calc(var(--u) * 1.2); }
+.slide .stack { display: flex; flex-direction: column; }
+.slide .stack .panel { font-size: calc(var(--u) * .98); padding: calc(var(--u) * 1.3) calc(var(--u) * 1.8); }
+.slide .becomes { text-align: center; color: #94a3b8; font-size: calc(var(--u) * 1.1); padding: calc(var(--u) * .45) 0; }
+.slide .becomes::before { content: "↓ "; }
+
 /* Title slide: light, with a soft wash of the brand colors */
 .slide.title {
   background:

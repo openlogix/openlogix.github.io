@@ -8,7 +8,7 @@
 <meta property="og:title" content="Open Logix overview">
 <meta property="og:description" content="An overview of the Open Logix project, in slides.">
 <link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="deck.css?v=26">
+<link rel="stylesheet" href="deck.css?v=28">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
   </nav>
 </header>
 
-<main style="--slides: '14'">   <!-- the total number of slides, shown as "n / 14": update it when adding or removing a slide -->
+<main style="--slides: '15'">   <!-- the total number of slides, shown as "n / 15": update it when adding or removing a slide -->
 
   <!-- Each slide: <div class="frame" id="..."><section class="slide"><div class="body">...</div></section></div> -->
 
@@ -102,6 +102,54 @@
           <li><strong>Open data:</strong> one readable JSON file per board, usable by any tool in any language.</li>
           <li><strong>Grows with the community:</strong> a custom board becomes a contribution with one pull request.</li>
         </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="frame" id="catalog-resources">
+    <section class="slide">
+      <img class="mark" src="../brand/logo.svg" alt="">
+      <div class="body">
+        <div class="heading">
+          <div>
+            <h2>Board <span class="grad-text">resources</span></h2>
+            <p>What each board's pins are wired to, by name.</p>
+          </div>
+        </div>
+        <div class="example">
+          <div>
+            <div class="types">
+            <div><b>Clocks</b><span>pin and frequency</span></div>
+            <div><b>LEDs</b><span>pins, active high or low</span></div>
+            <div><b>RGB LEDs</b><span>red, green and blue pins</span></div>
+            <div><b>LED matrices</b><span>a pin per LED and color</span></div>
+            <div><b>Buttons, switches</b><span>pins and active level</span></div>
+            <div><b>UARTs</b><span>TX, RX, and RTS and CTS</span></div>
+            <div><b>PMODs</b><span>8 pins, in header order</span></div>
+            <div><b>Headers</b><span>every position, in order</span></div>
+            <div><b>Unclassified</b><span>other wired pins</span></div>
+            </div>
+            <p class="also">Any resource can also give its I/O standard, its source, and what it needs, such as a jumper.</p>
+          </div>
+          <div class="stack">
+            <div class="panel"><span class="c">boards/alhambra-ii.json</span>
+{
+  <span class="s">"name"</span>: <span class="s">"Alhambra II"</span>,
+  <span class="s">"fpga_id"</span>: <span class="s">"ice40hx4k-tq144-8k"</span>,
+  <span class="s">"resources"</span>: {
+    <span class="s">"sys_clk"</span>: {<span class="s">"type"</span>: <span class="s">"clock"</span>, <span class="s">"pin"</span>: <span class="s">"49"</span>, <span class="s">"mhz"</span>: 12},
+    <span class="s">"leds"</span>: {<span class="s">"type"</span>: <span class="s">"leds"</span>, <span class="s">"active"</span>: <span class="s">"high"</span>,
+      <span class="s">"pins"</span>: [<span class="s">"45"</span>, <span class="s">"44"</span>, <span class="s">"43"</span>, <span class="s">"42"</span>, <span class="s">"41"</span>, <span class="s">"39"</span>, <span class="s">"38"</span>, <span class="s">"37"</span>]}
+  },
+  <span class="s">"variants"</span>: [ <span class="c">… how to program it …</span> ]
+}</div>
+            <div class="becomes">becomes the design's ports</div>
+            <div class="panel"><span class="k">module</span> main (
+  <span class="k">input</span>        sys_clk,   <span class="c">// 12 MHz</span>
+  <span class="k">output</span> [7:0] leds       <span class="c">// active high</span>
+);</div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
