@@ -1,6 +1,6 @@
-/* Open Logix overview deck (docs/overview/). Its own look, like slides, not
-   like the website: 16:9 slides on a dark backdrop, with text that scales
-   with the slide. No JavaScript: the page snaps from slide to slide. */
+/* Logix slide decks: one look for every deck; the overview deck (docs/overview/)
+   is the first and the baseline. 16:9 slides on a dark backdrop, with text that
+   scales with the slide. The page snaps from slide to slide without JavaScript. */
 :root {
   --ink: #0f172a;
   --muted: #475569;
