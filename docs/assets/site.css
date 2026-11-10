@@ -260,6 +260,10 @@ a.engine.catalog:hover { box-shadow: 0 20px 48px rgba(185,28,28,.36); }
 }
 .yes::before { background-color: #16a34a; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E"); }
 .no::before { background-color: #dc2626; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M4.5 4.5l7 7M11.5 4.5l-7 7'/%3E%3C/svg%3E"); }
+a.yes, a.no { text-decoration: none; white-space: nowrap; }
+a.yes::after, a.no::after { content: "↗"; margin-left: 2px; font-size: 12px; color: var(--muted); vertical-align: top; }
+.compare td a:not(.yes):not(.no) { color: var(--brand); }
+.notes { margin: 8px 0 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
 .legend { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
 .legend .yes, .legend .no { margin: 0 4px 0 0; }
 .legend .no { margin-left: 12px; }
