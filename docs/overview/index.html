@@ -376,14 +376,13 @@ SRC = os.path.abspath(<span class="s">"."</span>); BUILD = SRC + <span class="s"
 <span class="k">async def</span> main():
     <span class="k">async with</span> stdio_client(ENGINE) <span class="k">as</span> (r, w), ClientSession(r, w) <span class="k">as</span> s:
         <span class="k">await</span> s.initialize()
-        <span class="k">await</span> s.call_tool(<span class="s">"build"</span>, {<span class="s">"board"</span>: <span class="s">"icesugar-1-5"</span>, <span class="s">"top_module"</span>: <span class="s">"main"</span>,
+        <span class="k">await</span> s.call_tool(<span class="s">"build"</span>, {
+            <span class="s">"board"</span>: <span class="s">"icesugar-1-5"</span>, <span class="s">"top_module"</span>: <span class="s">"main"</span>,
             <span class="s">"source_folder"</span>: SRC, <span class="s">"source_files"</span>: [<span class="s">"main.v"</span>],
             <span class="s">"constraint_file"</span>: <span class="s">"pinout.pcf"</span>, <span class="s">"build_folder"</span>: BUILD})
         found = <span class="k">await</span> s.call_tool(<span class="s">"list_devices"</span>, {<span class="s">"build_folder"</span>: BUILD})
-        device = found.structuredContent[<span class="s">"devices"</span>][0][<span class="s">"id"</span>]
-        <span class="k">await</span> s.call_tool(<span class="s">"program_board"</span>,
-            {<span class="s">"build_folder"</span>: BUILD, <span class="s">"device"</span>: device})
-
+        <span class="k">await</span> s.call_tool(<span class="s">"program_board"</span>, {<span class="s">"build_folder"</span>: BUILD,
+            <span class="s">"device"</span>: found.structuredContent[<span class="s">"devices"</span>][0][<span class="s">"id"</span>]})
 asyncio.run(main())  <span class="c"># error handling left out</span></div>
         </div>
       </div>
