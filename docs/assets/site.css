@@ -242,6 +242,29 @@ a.engine.catalog:hover { box-shadow: 0 20px 48px rgba(185,28,28,.36); }
 .when::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: linear-gradient(135deg, var(--product), var(--product2)); }
 .card .when { margin: 8px 8px 0 0; padding: 2px 10px 2px 8px; font-size: 12px; }
 
+/* Comparison tables (docs/canonical-board/): yes, no, or empty when unknown */
+.compare-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.compare { width: 100%; border-collapse: collapse; font-size: 15px; }
+.compare th, .compare td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: middle; }
+.compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
+.compare thead th { background: var(--soft); font-weight: 700; white-space: nowrap; }
+.compare th[scope="row"], .compare thead th:first-child { text-align: left; font-weight: 600; min-width: 220px; }
+.compare th[scope="row"] { position: sticky; left: 0; z-index: 1; background: #fff; }
+.compare th small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
+.compare tr.text td { color: var(--muted); white-space: nowrap; }
+.yes, .no { position: relative; }
+.yes span, .no span { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.yes::before, .no::before {
+  content: ""; display: inline-block; width: 22px; height: 22px; border-radius: 999px; vertical-align: middle;
+  background-repeat: no-repeat; background-position: center; background-size: 14px;
+}
+.yes::before { background-color: #16a34a; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5'/%3E%3C/svg%3E"); }
+.no::before { background-color: #dc2626; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M4.5 4.5l7 7M11.5 4.5l-7 7'/%3E%3C/svg%3E"); }
+.legend { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+.legend .yes, .legend .no { margin: 0 4px 0 0; }
+.legend .no { margin-left: 12px; }
+.legend .yes::before, .legend .no::before { width: 18px; height: 18px; background-size: 11px; }
+
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .family { max-width: 280px; }
@@ -255,6 +278,7 @@ a.engine.catalog:hover { box-shadow: 0 20px 48px rgba(185,28,28,.36); }
   .engine { margin-top: 16px; }
 }
 @media (max-width: 600px) {
+  .compare th[scope="row"], .compare thead th:first-child { min-width: 150px; }
   nav a:not(.gh) { display: none; }
   .apps, .principles { grid-template-columns: 1fr; }
   .hero { padding: 56px 0 40px; }

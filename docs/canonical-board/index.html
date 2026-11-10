@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canonical board candidates | Open Logix</title>
+<meta name="description" content="Which FPGA board should Logix's docs, tutorials and examples use first? A comparison of candidate boards. Work in progress.">
+<meta property="og:title" content="Canonical board candidates">
+<meta property="og:description" content="Which FPGA board should Logix's docs, tutorials and examples use first? A comparison of candidate boards.">
+<link rel="icon" href="../brand/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../brand/logo.svg" alt=""><span><span class="open">Open</span><span class="logix">Logix</span></span></a>
+    <nav>
+      <a href="#compare">Comparison</a>
+      <a class="gh" href="https://github.com/openlogix">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section id="compare">
+    <div class="wrap">
+      <p class="eyebrow">Work in progress</p>
+      <h2>Canonical board candidates</h2>
+      <p class="sub">Which FPGA board should Logix's docs, tutorials and examples use first? These are the candidates, and what we'd like the board to have. Nothing is decided yet.</p>
+
+      <div class="compare-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">What we'd like</th>
+              <th scope="col">iCESugar v1.5</th>
+              <th scope="col">iCEBreaker</th>
+              <th scope="col">Alhambra II</th>
+              <th scope="col">iceFUN</th>
+              <th scope="col">Tang Nano 9K</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text">
+              <th scope="row">FPGA</th>
+              <td>iCE40 UP5K</td>
+              <td>iCE40 UP5K</td>
+              <td>iCE40 HX4K</td>
+              <td>iCE40 HX8K</td>
+              <td>Gowin GW1NR-9</td>
+            </tr>
+            <tr class="text">
+              <th scope="row">Price<small>About, in US dollars</small></th>
+              <td>$35</td>
+              <td>$70</td>
+              <td>$60</td>
+              <td>$38</td>
+              <td>$20</td>
+            </tr>
+            <tr>
+              <th scope="row">In Logix Catalog<small>Logix Engine builds for it and programs it today</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Mature open source tools<small>Yosys and nextpnr support its FPGA well</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Available long-term</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Sold on AliExpress</th>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Sold on Amazon</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">More than one manufacturer<small>So one maker stopping doesn't end it</small></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Sold in bundles with accessories<small>PMODs, displays and the like</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">Public schematic</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Official examples with open source tools<small>From the maker, not only for the vendor's IDE</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">On-board programmer<small>A plain USB cable is all it needs</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">No driver to install<small>On macOS, Windows and Linux</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">USB-C connector</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Powered by the USB cable alone</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">UART to the computer<small>Over the same USB cable</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Accurate clock, connected by default<small>A crystal oscillator, with no jumper to set</small></th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">PMOD connectors</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+              <td class="no"><span>No</span></td>
+            </tr>
+            <tr>
+              <th scope="row">LEDs</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Buttons or switches</th>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+              <td class="yes"><span>Yes</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="legend"><span class="yes"><span>Yes</span></span> Yes <span class="no"><span>No</span></span> No · Empty: not known yet. Prices are approximate. Some answers still need checking on the boards themselves.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../brand/logo.svg" alt=""><span><span class="open">Open</span><span class="logix">Logix</span></span></a>
+    <span>Free, open source FPGA tools, by the community, for the community · MIT or Apache 2.0 · <a href="../overview/">Overview slides</a> · <a href="https://github.com/openlogix">GitHub</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
