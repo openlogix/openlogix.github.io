@@ -76,6 +76,15 @@ Open Logix builds easy-to-use open source tools for FPGA design. Site content sh
   - **The two issue repos** have one issue form, "Problem or idea" (`.github/ISSUE_TEMPLATE/problem.yml`), with a Part dropdown (Logix IDE, Logix Engine, a board or FPGA, the FPGA tools, the website or docs, something else), so a report says where it belongs; blank issues stay allowed (Logix IDE's Help > Report a Problem opens one with its text filled in). An issue whose fix belongs elsewhere is fixed there and linked, or transferred.
   - **Private vulnerability reporting on in every repo** (the Security tab's "Report a vulnerability": private reports, emailed to the repo's admins). `openlogix/.github`'s `SECURITY.md`, shown in every repo, says to use it.
   - **Off everywhere:** wiki, Discussions, Projects, sponsorship. Pull requests can't be turned off on public repos.
+  - **By repo type** (the user's rule, 2026-11-12; the type is the repo's metadata file, Repo types):
+
+    | Repo type | Issues | Private vulnerability reporting | Wiki, Discussions, Projects | Sidebar: Releases | Sidebar: Packages, Deployments |
+    | --- | --- | --- | --- | --- | --- |
+    | installable | on (Logix IDE, Logix Engine); a later installable takes its own once it ships | on | off | on | off |
+    | dependency | off (→ Logix Engine) | on | off | on | off |
+    | no-releases | off (→ Logix IDE, or Logix Engine for `openlogix/.github`) | on | off | off | off |
+
+    The sidebar sections are the About box's gear on the repo page ("Include in the home page"); GitHub's API can't set or read them, so they're set by hand and `repos-janitor` doesn't check them (it checks the rest).
   - `repos-janitor` checks the settings (`repo-settings-should-match`). A new repo gets the settings, its metadata file and, without issues, the README line.
 - **App identity** (the user's decision, 2026-11-12): every Open Logix app's internal names come from its repo name: the bundle or app identifier `org.openlogix.<repo>` (reverse of our own domain, such as `org.openlogix.logix-ide`), the package and executable name `<repo>` (`logix-ide`), and installer files `<repo>-<platform>-<yyyymmdd>.<ext>` (`logix-ide-darwin-arm64-20261113.dmg`). So no two products share a name the OS or a download folder uses to tell them apart. Set before a product's first stable release: afterwards, a new bundle identifier makes the OS treat it as another app (lost window state and web-view data, permission prompts again).
 - **Wording: no file sizes** (the user's rule, 2026-11-11): user-facing text (docs, READMEs, pages, release text, UI messages) doesn't give file or download sizes, such as "about 3 GB". Why: they may change at any time (a new tool release, a new package), and they're hard to track and keep up to date across every page that mentions them, so they go stale. Say what something is and, where it helps, that it's large or small ("the first start downloads the FPGA tools, which takes a few minutes"). Limits the software enforces, such as a log cleanup's maximum, aren't sizes in this sense.
