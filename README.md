@@ -13,9 +13,11 @@ Source for **[www.openlogix.org](https://www.openlogix.org)**, the home page of 
 
 The site is static HTML in [`docs/`](docs/), published with GitHub Pages: the home page, one page per product (e.g. [`docs/ide/`](docs/ide/) at [www.openlogix.org/ide/](https://www.openlogix.org/ide/); also `engine`, `ai`, `cli`, `vscode`, `studio` and `remote`), and one shared stylesheet, [`docs/assets/site.css`](docs/assets/site.css). Brand assets (logo and product icons) are in [`docs/brand/`](docs/brand/).
 
+**Problems or ideas?** Report them in [Logix IDE's issues](https://github.com/openlogix/logix-ide/issues/new/choose): this repo takes no issues. Security problems: report them privately, as [SECURITY.md](https://github.com/openlogix/.github/blob/main/SECURITY.md) says.
+
 ## Status
 
-Every Open Logix repo's workflows, by their latest daily run on `main` (the site, by its latest deploy): green is passing, red is broken. Daily runs catch a break from GitHub's runners or an upstream tool even when nothing changed.
+Every Open Logix repo's workflows, by their latest run on `main` (the site, by its latest deploy): green is passing, red is broken. Each also runs daily, which catches a break from GitHub's runners or an upstream tool even when nothing changed.
 
 | Repo | Workflows |
 | --- | --- |
