@@ -78,9 +78,13 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
 .lineup { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 460px; justify-self: center; }
 .lineup a { display: block; width: 96px; }
 .lineup img { display: block; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); transition: transform .2s, filter .2s, opacity .2s; }
-.lineup .hero-links { flex-basis: 100%; margin: 6px 0 0; text-align: center; font-size: 16px; font-weight: 600; color: var(--muted); }
-.lineup .hero-links a { width: auto; display: inline; color: var(--brand); text-decoration: none; }
-.lineup .hero-links a:hover { text-decoration: underline; }
+/* The links to the supported FPGAs and predefined boards: buttons like the hero's GitHub one, level with
+   them, with the same space above (to the icons) and below (to the products section) */
+.home-hero { padding-bottom: 0; }
+.home-hero .lineup { align-self: end; }
+.lineup .hero-links { flex-basis: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
+.lineup .hero-links a.btn { width: auto; }
+#products { padding-top: 40px; }
 .lineup a.later img { filter: grayscale(1); opacity: .45; }
 .lineup a:hover img { transform: translateY(-4px) rotate(-2deg); filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); opacity: 1; }
 
@@ -248,7 +252,8 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
   .hero .wrap { grid-template-columns: 1fr; }
   .lineup { justify-self: start; justify-content: flex-start; gap: 14px; }
   .lineup a { width: 72px; }
-  .lineup .hero-links { text-align: left; }
+  .lineup .hero-links { justify-content: flex-start; gap: 10px; }
+  .lineup .hero-links a.btn { padding: 9px 14px; font-size: 15px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
   .hero-icon { width: 160px; height: 160px; justify-self: start; }
@@ -262,6 +267,7 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
   .apps, .principles { grid-template-columns: 1fr; }
   .later .card { flex-direction: row; }
   .hero { padding: 56px 0 40px; }
+  .home-hero { padding-bottom: 0; }
   section { padding: 48px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
