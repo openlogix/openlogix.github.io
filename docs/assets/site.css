@@ -254,6 +254,8 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 }
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 .gallery figure { margin: 0; }
+/* An odd last screenshot sits centered under the others, at the same size */
+.gallery figure:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 16px); }
 .gallery .shot { box-shadow: 0 12px 32px rgba(15,23,42,.10); }
 .gallery figcaption { margin-top: 12px; color: var(--muted); font-size: 15px; }
 .gallery figcaption strong { color: var(--ink); }
@@ -287,6 +289,7 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
   .lineup .hero-links a.btn { padding: 9px 14px; font-size: 15px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
+  .gallery figure:last-child:nth-child(odd) { width: auto; }
   .hero-icon { width: 160px; height: 160px; justify-self: start; }
   .flow, .free .wrap { grid-template-columns: 1fr; }
   .free .wrap { gap: 32px; }
