@@ -74,14 +74,12 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
 .btn-ghost { border: 1px solid var(--line); background: #fff; }
 .btn svg { width: 18px; height: 18px; }
 
-/* Home page hero: the products you can try now, large, and the ones coming later, small and gray */
-.lineup { display: grid; gap: 22px; max-width: 380px; width: 100%; justify-self: center; }
-.lineup img { display: block; width: 100%; aspect-ratio: 1; transition: transform .2s, filter .2s; }
-.lineup .now { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.lineup .now img { filter: drop-shadow(0 14px 28px rgba(15,23,42,.22)); }
-.lineup .next { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.lineup .next img { filter: grayscale(1); opacity: .45; }
-.lineup img:hover { transform: translateY(-4px) rotate(-2deg); }
+/* Home page hero: every product's icon, the same size, linking to its page; the ones coming later are gray until they're available */
+.lineup { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 460px; justify-self: center; }
+.lineup a { display: block; width: 96px; }
+.lineup img { display: block; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); transition: transform .2s, filter .2s, opacity .2s; }
+.lineup a.later img { filter: grayscale(1); opacity: .45; }
+.lineup a:hover img { transform: translateY(-4px) rotate(-2deg); filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); opacity: 1; }
 
 /* Sections */
 section { padding: 64px 0; }
@@ -245,7 +243,8 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
-  .lineup { max-width: 300px; justify-self: start; }
+  .lineup { justify-self: start; justify-content: flex-start; gap: 14px; }
+  .lineup a { width: 72px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
   .hero-icon { width: 160px; height: 160px; justify-self: start; }
