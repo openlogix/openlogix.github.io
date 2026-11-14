@@ -76,7 +76,7 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
 
 /* Home page hero: every product's icon, the same size, linking to its page; the ones coming later are gray until they're available */
 .lineup { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 460px; justify-self: center; }
-.lineup a { display: block; width: 96px; }
+.lineup > a, .lineup > span { display: block; width: 96px; }
 .lineup img { display: block; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); transition: transform .2s, filter .2s, opacity .2s; }
 /* The links to the supported FPGAs and predefined boards: buttons like the hero's GitHub one, level with
    them, with the same space above (to the icons) and below (to the products section) */
@@ -85,8 +85,8 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
 .lineup .hero-links { flex-basis: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
 .lineup .hero-links a.btn { width: auto; }
 #products { padding-top: 40px; }
-.lineup a.later img { filter: grayscale(1); opacity: .45; }
-.lineup a:hover img { transform: translateY(-4px) rotate(-2deg); filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); opacity: 1; }
+.lineup .later img { filter: grayscale(1); opacity: .45; }
+.lineup > a:hover img, .lineup > span:hover img { transform: translateY(-4px) rotate(-2deg); filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); opacity: 1; }
 
 /* Sections */
 section { padding: 64px 0; }
@@ -233,13 +233,18 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 .pick .for strong { color: var(--ink); }
 .pick .more { margin-top: auto; font-size: 15px; font-weight: 600; color: var(--brand); }
 .later { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.later .card:hover, .card.muted:hover { transform: none; box-shadow: none; }
 .later .card { flex-direction: column; padding: 20px; gap: 12px; background: var(--soft); }
 .later .card img { width: 40px; height: 40px; filter: grayscale(1); opacity: .5; transition: filter .2s, opacity .2s; }
 .later .card:hover img { filter: none; opacity: 1; }
 .later .card h3 { font-size: 16px; color: var(--muted); }
 .later .card p { font-size: 14px; color: #64748b; }
 .later .card .for { margin-top: 6px; font-weight: 600; }
-.later .card .when { --product: #cbd5e1; --product2: #94a3b8; margin-top: 10px; white-space: nowrap; }
+/* Products coming later, on the product pages' grids: grayed, not links */
+.card.muted { background: var(--soft); }
+.card.muted img { filter: grayscale(1); opacity: .5; }
+.card.muted h3 { color: var(--muted); }
+.card.muted .when, .later .card .when { --product: #cbd5e1; --product2: #94a3b8; margin-top: 10px; white-space: nowrap; }
 
 /* Product pages (docs/<product>/index.html) */
 .product-name { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
@@ -284,7 +289,7 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .lineup { justify-self: start; justify-content: flex-start; gap: 14px; }
-  .lineup a { width: 72px; }
+  .lineup > a, .lineup > span { width: 72px; }
   .lineup .hero-links { justify-content: flex-start; gap: 10px; }
   .lineup .hero-links a.btn { padding: 9px 14px; font-size: 15px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
