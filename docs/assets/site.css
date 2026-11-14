@@ -132,12 +132,15 @@ h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.15; letter-spacing: -.025
 .arrow svg { width: 32px; height: 32px; }
 .board { width: 56px; height: 56px; margin: 0 auto 10px; display: block; }
 /* Home page AI flow: icons as large as the hero's, compact cards */
-#ai .flow { gap: 10px; max-width: 960px; margin: 0 auto; }
-#ai .step { padding: 22px 18px; display: flex; flex-direction: column; align-items: center; }
-#ai .step img, #ai .board { width: 96px; height: 96px; margin: 0 0 12px; filter: drop-shadow(0 10px 20px rgba(15,23,42,.15)); }
+#ai { padding: 56px 0; }
+#ai .flow { gap: 10px; max-width: 1040px; margin: 0 auto; }
+#ai .sub { margin-bottom: 28px; }
+#ai .note { margin-top: 24px; }
+#ai .step { padding: 0 6px; border: 0; background: none; display: flex; flex-direction: column; align-items: center; }
+#ai .step img, #ai .board { width: 96px; height: 96px; margin: 0 0 10px; filter: drop-shadow(0 10px 20px rgba(15,23,42,.15)); }
 #ai .step h3 { font-size: 20px; }
 #ai .step p { font-size: 16px; }
-#ai .step .chips { margin-top: 12px; }
+#ai .step .chips { margin-top: 10px; gap: 6px; }
 #ai .arrow svg { width: 28px; height: 28px; }
 .note { text-align: center; margin: 32px 0 0; font-size: 18px; color: var(--muted); }
 .note strong { color: var(--ink); }
