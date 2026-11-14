@@ -75,15 +75,17 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
 .btn svg { width: 18px; height: 18px; }
 
 /* Home page hero: every product's icon, the same size, linking to its page; the ones coming later are gray until they're available */
-.lineup { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 460px; justify-self: center; }
+.lineup { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 20px; max-width: 460px; justify-self: center; }
 .lineup > a, .lineup > span { display: block; width: 96px; }
 .lineup img { display: block; width: 100%; aspect-ratio: 1; filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); transition: transform .2s, filter .2s, opacity .2s; }
-/* The links to the supported FPGAs and predefined boards: buttons like the hero's GitHub one, level with
-   them, with the same space above (to the icons) and below (to the products section) */
+/* The hero ends with its buttons; the products section follows closely */
 .home-hero { padding-bottom: 0; }
-.home-hero .lineup { align-self: end; }
-.lineup .hero-links { flex-basis: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
-.lineup .hero-links a.btn { width: auto; }
+/* Four buttons in one row under the text, and the icons beside it, left-aligned */
+.home-hero .wrap { grid-template-columns: 1fr auto; gap: 40px; }
+.home-hero .cta { gap: 10px; flex-wrap: nowrap; }
+.home-hero .cta .btn { padding: 11px 17px; font-size: 15px; white-space: nowrap; }
+.home-hero .lineup { max-width: 412px; gap: 18px; }
+.home-hero .lineup > a, .home-hero .lineup > span { width: 89px; }
 #products { padding-top: 40px; }
 .lineup .later img { filter: grayscale(1); opacity: .45; }
 .lineup > a:hover img, .lineup > span:hover img { transform: translateY(-4px) rotate(-2deg); filter: drop-shadow(0 10px 20px rgba(15,23,42,.18)); opacity: 1; }
@@ -293,11 +295,10 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 .card .when { margin: 8px 8px 0 0; padding: 2px 10px 2px 8px; font-size: 12px; }
 
 @media (max-width: 900px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .lineup { justify-self: start; justify-content: flex-start; gap: 14px; }
+  .hero .wrap, .home-hero .wrap { grid-template-columns: 1fr; }
+  .home-hero .cta { flex-wrap: wrap; }
+  .lineup { justify-self: start; gap: 14px; }
   .lineup > a, .lineup > span { width: 72px; }
-  .lineup .hero-links { justify-content: flex-start; gap: 10px; }
-  .lineup .hero-links a.btn { padding: 9px 14px; font-size: 15px; }
   .apps, .principles { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr; }
   .gallery figure:last-child:nth-child(odd) { width: auto; }
