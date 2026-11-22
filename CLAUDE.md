@@ -113,6 +113,16 @@ The **iCESugar v1.5** (iCE40 UltraPlus UP5K, by Muse Lab; [github.com/wuxx/icesu
 - **The best-described board.** Logix Catalog's `icesugar-1-5` gets extra effort to be as complete and accurate as possible, from its schematic, its maker's files and hardware tests.
 - **Each repo applies it** in its own `CLAUDE.md` (what it uses the board for), pointing here for the rule.
 
+## Generated HDL code
+
+Every Open Logix product and repo that writes FPGA designs or testbenches, or guides an AI agent that does (examples, templates, tutorials, generated code), follows these rules (the user's, 2026-11-22; first applied to Logix IDE's examples):
+
+- **Every register of a design starts at 0**, in its declaration (`reg [7:0] count = 8'd0;`), and the design is written so that 0 is its resting state. A value that must rest at 1, such as a serial line that idles high, is made by logic from registers at 0 (`assign tx = ready ? 1'b1 : bits[0];`) or stored the other way round (a button's "pressed", not its pin level). **Why:** iCE40 flip-flops can only power up at 0. Yosys's iCE40 models start every flip-flop at 0, `SB_DFFS` included, whose set acts only while the design runs, and a register declared to start at 1 works only because yosys stores it inverted and adds a LUT as an inverter. This was checked in a test build on 2026-11-22. The other families do set a power-up value per flip-flop: ECP5 `REGSET`, Gowin `DFFSE` and `INIT`, and Xilinx `INIT`. With 0 everywhere, the code matches the hardware on every family, and a diagram shows no inverters the code doesn't have.
+- **No reset unless the design needs one**, such as waiting for a PLL to lock or a restart button: the FPGA loads the starting values when it starts.
+- **No x in a simulation.** No read runs past the end of a constant or a memory, even when the value isn't used then; for example, a character counter goes back to the start after the last character. People, beginners above all, take a red x in a waveform for an error.
+- **Testbenches** are simulation only: the zero rule doesn't apply to them, but every variable declared at module level (not inside a task) starts with a value, any value that makes sense, so none shows as x at the start of the waveform.
+- **Each repo applies it** in its own `CLAUDE.md`, pointing here.
+
 ## Org principles
 
 Every Open Logix product follows these principles. Site content should reflect them consistently:
