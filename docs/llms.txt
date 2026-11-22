@@ -1,0 +1,43 @@
+<!--
+  AI agents read this file: Logix Engine's MCP instructions send them here
+  (https://www.openlogix.org/llms.txt). Keep its address and structure
+  stable and backward compatible: add to it, but never remove or rename a
+  section or link agents may rely on, and give a moved page a redirect.
+  The rule is in this site's CLAUDE.md (llms.txt).
+-->
+# Open Logix
+
+> Open Logix builds free, open source tools for FPGA design (MIT or Apache 2.0). Every tool runs on Logix Engine, an MCP server with the open source FPGA tools built in: it lints, builds, tests, simulates and programs FPGA boards. Each frontend, such as Logix IDE, has its own project model; when you work in a frontend's project, follow that frontend's guide below rather than Logix Engine's default project model.
+
+Products available now: Logix Engine, Logix IDE and Logix Catalog. Logix AI, Logix CLI, Logix VSCode, Logix Studio and Logix Remote are coming later and have no docs yet.
+
+## Logix Engine
+
+The MCP backend every Open Logix tool runs on. Requests are self-contained: they name the board, source folder, source files and build folder.
+
+- [Tool API](https://www.openlogix.org/logix-engine/tool-api/): every tool, its inputs and results, recipes for frontend developers, and how to write testbenches
+- [Default project model](https://www.openlogix.org/logix-engine/tool-api/#default-project-model): for a project that has no model of its own
+- [Command line](https://www.openlogix.org/logix-engine/command-line/): launching the engine and its options
+- [Tutorial with Claude Code](https://www.openlogix.org/logix-engine/tutorial-claude-code/): installing the engine and connecting it to an AI agent
+- [Product page](https://www.openlogix.org/engine/)
+
+## Logix IDE
+
+A desktop IDE for FPGAs (the Arduino experience, for FPGAs). A folder with a `logix-ide.toml` file is a Logix IDE project.
+
+- [Using Logix IDE with an AI agent](https://www.openlogix.org/logix-ide/ai-agents/): the project model and the rules for agents working in a Logix IDE project, while Logix IDE is open on it
+- [Docs](https://www.openlogix.org/logix-ide/)
+- [Tutorial](https://www.openlogix.org/logix-ide/tutorial/)
+- [Product page](https://www.openlogix.org/ide/)
+
+## Logix Catalog
+
+The open catalog of FPGA boards, one JSON file per board. Read board data through Logix Engine's `get_catalog`, not from the catalog's files.
+
+- [Supported boards](https://www.openlogix.org/logix-catalog/boards/) and [supported FPGAs](https://www.openlogix.org/logix-catalog/fpgas/)
+- [Board model](https://www.openlogix.org/logix-catalog/model/): the board file format, for a project's own boards and for adding boards to the catalog
+
+## Optional
+
+- [Open Logix home page](https://www.openlogix.org/)
+- [GitHub organization](https://github.com/openlogix)
