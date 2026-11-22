@@ -11,7 +11,7 @@
 
 Source for **[www.openlogix.org](https://www.openlogix.org)**, the home page of Open Logix: free, open source tools for FPGA design.
 
-The site is static HTML in [`docs/`](docs/), published with GitHub Pages: the home page, one page per product (e.g. [`docs/ide/`](docs/ide/) at [www.openlogix.org/ide/](https://www.openlogix.org/ide/); also `engine`, `ai`, `cli`, `vscode`, `studio` and `remote`), and one shared stylesheet, [`docs/assets/site.css`](docs/assets/site.css). Brand assets (logo and product icons) are in [`docs/brand/`](docs/brand/).
+The site is static HTML in [`docs/`](docs/), published with GitHub Pages: the home page, one page per available product ([`docs/ide/`](docs/ide/) at [www.openlogix.org/ide/](https://www.openlogix.org/ide/), and [`docs/engine/`](docs/engine/)), and one shared stylesheet, [`docs/assets/site.css`](docs/assets/site.css). Brand assets (logo and product icons) are in [`docs/brand/`](docs/brand/).
 
 **Problems or ideas?** Report them in [Logix IDE's issues](https://github.com/openlogix/logix-ide/issues/new/choose): this repo takes no issues. Security problems: report them privately, as [SECURITY.md](https://github.com/openlogix/.github/blob/main/SECURITY.md) says.
 
