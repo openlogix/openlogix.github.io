@@ -325,14 +325,14 @@
             <li><strong>Connect once:</strong> add the engine to an agent such as Claude Code.</li>
             <li><strong>Ask in plain words:</strong> the agent learns the tools from the engine itself.</li>
             <li><strong>End to end:</strong> it writes the design, builds it and programs the board.</li>
-            <li><strong>Done already:</strong> an agent changed a design, built it and programmed an Alhambra II through the engine alone.</li>
+            <li><strong>Done already:</strong> an agent changed a design, built it and programmed the board through the engine alone.</li>
             <li><strong>Runs on</strong> macOS, Windows and Linux. Previews available now, release Q4 2026.</li>
           </ul>
           <div class="panel"><span class="c"># connect the engine to Claude Code, once</span>
 <span class="p">$</span> claude mcp add logix-engine -- logix-engine \
     --engine-folder ~/.logix/claude-code/engine-data
 
-<span class="p">&gt;</span> <span class="you">Make the LED on my Alhambra II blink
+<span class="p">&gt;</span> <span class="you">Make the LED on my iCESugar v1.5 blink
   once a second, then program the board.</span>
 
 <span class="t">●</span> get_catalog     <span class="c">the board's clock and LED pins</span>
@@ -401,7 +401,7 @@ asyncio.run(main())  <span class="c"># error handling left out</span></div>
         </div>
         <ul>
           <li><strong>Editor extensions:</strong> JetBrains, Neovim, Emacs or Zed (Logix VSCode covers VS Code).</li>
-          <li><strong>Web frontends:</strong> nothing to install, with the engine in the browser (planned) or via Logix Remote.</li>
+          <li><strong>Web frontends:</strong> nothing to install, via Logix Remote.</li>
           <li><strong>Python and other languages:</strong> Amaranth, LiteX or MyHDL designs, built by the engine.</li>
           <li><strong>Test automation:</strong> scripts and CI that build designs, run testbenches and program boards.</li>
           <li><strong>Tool testing:</strong> regression suites that check the open source FPGA tools on many boards.</li>
