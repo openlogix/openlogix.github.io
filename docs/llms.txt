@@ -18,6 +18,7 @@ The MCP backend every Open Logix tool runs on. Requests are self-contained: they
 - [Tool API](https://www.openlogix.org/logix-engine/tool-api/): every tool, its inputs and results, recipes for frontend developers, and how to write testbenches
 - [Default project model](https://www.openlogix.org/logix-engine/tool-api/#default-project-model): for a project that has no model of its own
 - [Command line](https://www.openlogix.org/logix-engine/command-line/): launching the engine and its options
+- [Custom boards](https://www.openlogix.org/logix-engine/custom-boards/): adding a board that isn't one of the supported boards, a file in a custom boards folder sent as custom_boards_folder
 - [Tutorial with Claude Code](https://www.openlogix.org/logix-engine/tutorial-claude-code/): installing the engine and connecting it to an AI agent
 - [Product page](https://www.openlogix.org/engine/)
 
@@ -28,6 +29,7 @@ A desktop IDE for FPGAs (the Arduino experience, for FPGAs). A folder with a `lo
 - [Using Logix IDE with an AI agent](https://www.openlogix.org/logix-ide/ai-agents/): the project model and the rules for agents working in a Logix IDE project, while Logix IDE is open on it
 - [Docs](https://www.openlogix.org/logix-ide/)
 - [Tutorial](https://www.openlogix.org/logix-ide/tutorial/)
+- [Custom boards](https://www.openlogix.org/logix-ide/custom-boards/): a Logix IDE project's own boards, in its boards folder
 - [Product page](https://www.openlogix.org/ide/)
 
 ## Logix Catalog
