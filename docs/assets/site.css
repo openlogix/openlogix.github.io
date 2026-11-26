@@ -263,7 +263,9 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 .card.muted .when, .later .card .when { --product: #cbd5e1; --product2: #94a3b8; margin-top: 10px; white-space: nowrap; }
 
 /* Product pages (docs/<product>/index.html) */
-.product-name { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+/* Product pages: the header names the product, so the hero starts close under it */
+.hero:not(.home-hero) { padding-top: 40px; }
+.product-name { display: flex; align-items: center; gap: 14px; margin: 0 0 36px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
 .product-name img { width: 56px; height: 56px; filter: drop-shadow(0 8px 16px rgba(15,23,42,.18)); }
 .product-hero .wrap { grid-template-columns: 1fr; gap: 56px; }
 .product-hero h1 { max-width: 14em; }
@@ -324,6 +326,7 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
   .pick .head { gap: 16px; }
   .pick .head img { width: 80px; height: 80px; }
   .hero { padding: 56px 0 40px; }
+  .hero:not(.home-hero) { padding-top: 28px; }
   .home-hero { padding-bottom: 0; }
   section { padding: 48px 0; }
 }
