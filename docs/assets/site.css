@@ -37,6 +37,8 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .brand img { width: 32px; height: 32px; }
 .brand .open { font-weight: 400; color: var(--muted); }
 .brand .logix { font-weight: 800; }
+/* Product pages: the product's own colors (its icon's gradient, --product and --product2 on <body>) for every brand accent: the headline's gradient and the buttons */
+.product-page { --brand: var(--product); --brand2: var(--product2); }
 /* Product pages: the product next to the org's brand, so the sticky header says where you are */
 .where { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .where .sep { color: #cbd5e1; font-size: 22px; font-weight: 300; }
@@ -75,8 +77,9 @@ h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -.035
   text-decoration: none; transition: transform .15s, box-shadow .15s;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { color: #fff; background: linear-gradient(90deg, var(--brand), var(--brand2)); box-shadow: 0 8px 24px rgba(99,102,241,.3); }
-.btn-ghost { border: 1px solid var(--line); background: #fff; }
+.btn-primary { color: #fff; background: linear-gradient(90deg, var(--brand), var(--brand2)); box-shadow: 0 8px 24px color-mix(in srgb, var(--brand) 30%, transparent); }
+.btn-ghost { border: 1px solid color-mix(in srgb, var(--brand) 16%, #fff); background: color-mix(in srgb, var(--brand) 9%, #fff); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--brand) 16%, #fff); }
 .btn svg { width: 18px; height: 18px; }
 
 /* Home page hero: every product's icon, the same size, linking to its page; the ones coming later are gray until they're available */
@@ -179,6 +182,7 @@ h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.15; letter-spacing: -.025
 .price .big { font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -.04em; color: #fff; }
 .price .small { color: #94a3b8; font-size: 16px; line-height: 1.4; }
 .free .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.25); }
+.free .btn-ghost:hover { background: rgba(255,255,255,.08); }
 .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .checks li {
   display: flex; gap: 14px; align-items: flex-start;
