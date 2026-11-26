@@ -212,7 +212,7 @@ Each product gets a short page at `www.openlogix.org/<short>/`, where `<short>` 
 - **Product icon recipe.** Every family icon follows this so they read as a set:
   - `viewBox="0 0 64 64"`, a `rect` with `rx="16"` as the tile, filled with a diagonal linear gradient (top-left to bottom-right) from a light shade to a deep shade of the product's own hue.
   - One simple white glyph, centered within roughly 14 to 50. Draw it with `stroke="#fff" stroke-width="4.5"`, round caps and joins, and no fill. Small solid white accents (dots, triangles, stars) are allowed.
-  - Current hues: Engine violet, Catalog red, IDE green, CLI slate, VSCode blue, Studio orange, Remote cyan, AI pink to purple. A new product needs a hue that isn't taken yet.
+  - Current hues: Engine violet, Catalog brown (2026-11-26; red looked alarming), IDE green, CLI slate, VSCode blue, Studio orange, Remote cyan, AI pink to purple. A new product needs a hue that isn't taken yet.
 - Glyphs: Engine = chip, Catalog = open book, IDE = window with a play button, CLI = `>_`, VSCode = `</>`, Studio = AND gate, Remote = wireless signal, AI = sparkle.
 - **Slide decks** (decided 2026-11-08): every Open Logix slide deck follows one style, and the overview deck (`docs/overview/`) is the baseline: 16:9 slides on a dark backdrop, white content slides with a light title slide, titles at the same height with their last part in the brand gradient, bold-led bullets, the small logo bottom left, "‹ n / m ›" bottom right, and share and full-screen buttons top right. New decks link the shared stylesheet, `docs/assets/deck.css`, and reuse the overview deck's markup and script, rather than copying or restyling them; a change to the look is made there, for every deck.
 
