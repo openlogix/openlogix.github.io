@@ -237,7 +237,7 @@ main { padding-top: var(--bar); }
 .diagram .api { background: linear-gradient(90deg, #eef2ff, #ecfeff); border: 1px solid #c7d2fe; }
 .diagram .remote { border-color: #a5f3fc; background: #f0fdff; }
 .diagram .engine { border: 2px solid #c4b5fd; background: linear-gradient(120deg, #f5f3ff, #ede9fe); }
-.diagram .catalog { border-color: #fecaca; background: #fef2f2; }
+.diagram .catalog { border-color: #e7d5c3; background: #faf5ef; }
 .diagram .arrow { display: grid; place-items: center; color: #a5b4fc; font-size: calc(var(--u) * 2.4); font-weight: 700; }
 
 /* Phones: slides keep their order but grow to fit their text */
