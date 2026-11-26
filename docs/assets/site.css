@@ -37,6 +37,11 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .brand img { width: 32px; height: 32px; }
 .brand .open { font-weight: 400; color: var(--muted); }
 .brand .logix { font-weight: 800; }
+/* Product pages: the product next to the org's brand, so the sticky header says where you are */
+.where { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.where .sep { color: #cbd5e1; font-size: 22px; font-weight: 300; }
+.crumb { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-size: 18px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; }
+.crumb img { width: 26px; height: 26px; }
 nav { display: flex; gap: 28px; font-size: 15px; }
 nav a { text-decoration: none; color: var(--muted); }
 nav a:hover { color: var(--ink); }
@@ -313,6 +318,7 @@ h3.group span { font-size: 14px; font-weight: 600; letter-spacing: 0; text-trans
 }
 @media (max-width: 600px) {
   nav a:not(.gh) { display: none; }
+  .where .brand > span { display: none; }
   .apps, .principles { grid-template-columns: 1fr; }
   .later .card { flex-direction: row; }
   .pick .head { gap: 16px; }
